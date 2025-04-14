@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33927.289
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBActive_Taegis_Events_Auto1", "VBActive_Taegis_Events_Auto1.vbproj", "{DB68CAA7-451D-4D88-97A4-AD659B759AA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB68CAA7-451D-4D88-97A4-AD659B759AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB68CAA7-451D-4D88-97A4-AD659B759AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB68CAA7-451D-4D88-97A4-AD659B759AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB68CAA7-451D-4D88-97A4-AD659B759AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B36C565-D4FB-44D9-BD33-92891BC4F07F}
+	EndGlobalSection
+EndGlobal

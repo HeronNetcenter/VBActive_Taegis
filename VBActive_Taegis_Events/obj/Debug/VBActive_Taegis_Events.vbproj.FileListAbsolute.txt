@@ -1,0 +1,16 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\bin\Debug\VBActive_Taegis_Events.exe.config
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\bin\Debug\VBActive_Taegis_Events.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\bin\Debug\VBActive_Taegis_Events.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\bin\Debug\VBActive_Taegis_Events.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\bin\Debug\VBActive_Taegis_DLL.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\bin\Debug\VBActive_Taegis_DLL.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\bin\Debug\VBActive_Taegis_DLL.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive_Taegis_Events.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive_Taegis_Events.Form1.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive_Taegis_Events.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive_Taegis_Events.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive_Taegis_Events.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive.DA95F7C3.Up2Date
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive_Taegis_Events.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive_Taegis_Events.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Events\obj\Debug\VBActive_Taegis_Events.pdb

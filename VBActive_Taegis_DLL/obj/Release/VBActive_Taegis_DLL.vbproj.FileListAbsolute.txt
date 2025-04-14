@@ -1,0 +1,12 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\bin\Release\VBActive_Taegis_DLL.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\bin\Release\VBActive_Taegis_DLL.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\bin\Release\VBActive_Taegis_DLL.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.frmClientes.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.frmConfig.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DLL\obj\Release\VBActive_Taegis_DLL.pdb

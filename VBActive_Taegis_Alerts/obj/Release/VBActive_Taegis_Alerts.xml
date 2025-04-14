@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+VBActive_Taegis_Alerts
+</name>
+</assembly>
+<members>
+<member name="T:VBActive_Taegis_Alerts.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:VBActive_Taegis_Alerts.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:VBActive_Taegis_Alerts.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:VBActive_Taegis_Alerts.Form1.OcorrenciasTacticsAnt(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna a quantidade de ocorrências do substring "tactics" no campo tactics_technique_id 
+ </summary>
+ <param name="strTactics"></param>
+ <returns></returns>
+</member>
+<member name="M:VBActive_Taegis_Alerts.Form1.OcorrenciasTechnique_Id(System.String,System.String)">
+ <summary>
+ Retorna a quantidade de ocorrências do substring "technique_id" no campo tactics_technique_id 
+ </summary>
+ <param name="strTechniqueId"></param>
+ <returns></returns>
+</member>
+<member name="M:VBActive_Taegis_Alerts.Form1.DownloadLatestExcelAsync">
+ <summary>
+ Faz o download da planilha Excel
+ </summary>
+</member>
+<member name="M:VBActive_Taegis_Alerts.Form1.GetLatestExcelUrlAsync">
+ <summary>
+ Monta o URL da planilha Excel de Techniques
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:VBActive_Taegis_Alerts.Proj.VersaoAuto1">
+ <summary>
+ Retorna a versão automática da aplicação
+ </summary>
+ <returns></returns>
+</member>
+</members>
+</doc>

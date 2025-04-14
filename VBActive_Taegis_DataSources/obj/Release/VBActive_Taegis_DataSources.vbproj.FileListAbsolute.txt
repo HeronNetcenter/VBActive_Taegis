@@ -1,0 +1,16 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\bin\Release\VBActive_Taegis_DataSources.exe.config
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\bin\Release\VBActive_Taegis_DataSources.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\bin\Release\VBActive_Taegis_DataSources.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\bin\Release\VBActive_Taegis_DataSources.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\bin\Release\VBActive_Taegis_DLL.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\bin\Release\VBActive_Taegis_DLL.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\bin\Release\VBActive_Taegis_DLL.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive_Taegis_DataSources.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive_Taegis_DataSources.Form1.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive_Taegis_DataSources.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive_Taegis_DataSources.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive_Taegis_DataSources.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive.3D0AC621.Up2Date
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive_Taegis_DataSources.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive_Taegis_DataSources.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Release\VBActive_Taegis_DataSources.pdb

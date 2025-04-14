@@ -1,0 +1,112 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|c:\\dwnetcenter\\_desenv\\vb\\vbactive_taegis_investigations\\frmmutations.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|solutionrelative:frmmutations.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|c:\\dwnetcenter\\_desenv\\vb\\vbactive_taegis_investigations\\frmmutations.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|solutionrelative:frmmutations.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|solutionrelative:form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|solutionrelative:form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|c:\\dwnetcenter\\_desenv\\vb\\vbactive_taegis_investigations\\proj.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{53F5B40C-D225-471A-B0AA-3469DE1BADF5}|VBActive_Taegis_Investigations.vbproj|solutionrelative:proj.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.vb",
+              "DocumentMoniker": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\Form1.vb",
+              "RelativeDocumentMoniker": "Form1.vb",
+              "ToolTip": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\Form1.vb",
+              "RelativeToolTip": "Form1.vb",
+              "ViewState": "AgIAAA4CAAAAAAAAAAAIwBUCAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-19T18:27:33.895Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMutations.vb",
+              "DocumentMoniker": "c:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\frmMutations.vb",
+              "RelativeDocumentMoniker": "frmMutations.vb",
+              "ToolTip": "c:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\frmMutations.vb",
+              "RelativeToolTip": "frmMutations.vb",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwDoAAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-04T15:10:45.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMutations.vb [Design]",
+              "DocumentMoniker": "c:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\frmMutations.vb",
+              "RelativeDocumentMoniker": "frmMutations.vb",
+              "ToolTip": "c:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\frmMutations.vb [Design]",
+              "RelativeToolTip": "frmMutations.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-04T15:02:26.855Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Proj.vb",
+              "DocumentMoniker": "c:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\Proj.vb",
+              "RelativeDocumentMoniker": "Proj.vb",
+              "ToolTip": "c:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\Proj.vb",
+              "RelativeToolTip": "Proj.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-03-20T18:35:52.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.vb [Design]",
+              "DocumentMoniker": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\Form1.vb",
+              "RelativeDocumentMoniker": "Form1.vb",
+              "ToolTip": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations\\Form1.vb [Design]",
+              "RelativeToolTip": "Form1.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-19T18:27:10.281Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

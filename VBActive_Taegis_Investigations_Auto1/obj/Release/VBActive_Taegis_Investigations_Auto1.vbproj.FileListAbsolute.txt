@@ -1,0 +1,15 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\VBActive_Taegis_Investigations_Auto1.exe.config
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\VBActive_Taegis_Investigations_Auto1.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\VBActive_Taegis_Investigations_Auto1.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\VBActive_Taegis_Investigations_Auto1.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\VBActive_Taegis_DLL.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\VBActive_Taegis_DLL.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\VBActive_Taegis_DLL.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive.90B20733.Up2Date
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.pdb

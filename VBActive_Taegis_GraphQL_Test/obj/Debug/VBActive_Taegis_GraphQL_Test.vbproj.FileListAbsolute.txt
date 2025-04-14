@@ -1,0 +1,11 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\bin\Debug\VBActive_Taegis_GraphQL_Test.exe.config
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\bin\Debug\VBActive_Taegis_GraphQL_Test.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\bin\Debug\VBActive_Taegis_GraphQL_Test.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\bin\Debug\VBActive_Taegis_GraphQL_Test.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\obj\Debug\VBActive_Taegis_GraphQL_Test.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\obj\Debug\VBActive_Taegis_GraphQL_Test.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\obj\Debug\VBActive_Taegis_GraphQL_Test.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\obj\Debug\VBActive_Taegis_GraphQL_Test.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\obj\Debug\VBActive_Taegis_GraphQL_Test.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\obj\Debug\VBActive_Taegis_GraphQL_Test.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_GraphQL_Test\obj\Debug\VBActive_Taegis_GraphQL_Test.pdb

@@ -1,0 +1,86 @@
+# INVESTIGATIONS: PROGRAMA ALTERA O CAMPO SERVICE_DESK_ID EM INVESTIGATIONS A PARTIR CO ID DA INVESTIGAÇÃO
+#          VERSÃO SDK/OAuth2 PARA SER USADA NA PRODUÇÃO DENTRO DE PROGRAMAS VB
+""" 
+AUTOR: HERON JR
+DATA:  09/10/23
+ALT:   10/10/23
+US2: https://api.delta.taegis.secureworks.com
+Tenant Id: 137287
+Tenant Name: Netcenter - Production
+client_id: SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg
+client_secret: ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx
+ """
+ 
+ # ======================= Variáveis de importação =======================
+import logging
+import os
+import sys
+
+from taegis_sdk_python import GraphQLService
+from taegis_sdk_python.authentication import get_token_by_oauth
+from taegis_sdk_python._consts import TAEGIS_ENVIRONMENT_URLS
+from taegis_sdk_python.services.events.types import (EventQueryOptions, EventQueryResults)
+# ========================================================================================
+from taegis_sdk_python.services.investigations.types import UpdateInvestigationInput
+
+# ======================= Disable Deprecated Commands Messages =======================
+logging.getLogger("taegis_sdk_python.utils").setLevel(logging.ERROR)
+logging.getLogger("taegis_sdk_python.services").setLevel(logging.ERROR)
+# ========================================================================================
+
+# DEFINIÇÃO DOS PARÂMETROS EXTERNOS
+# pClientName: Nome do cliente
+# pTenantId: Tenant ID do cliente
+# O processo será automatizado pelo programa VB.Net de chamada que calculará a data do dia seguinte a partir da data informada como parâmetro.
+import argparse
+parser = argparse.ArgumentParser()
+# parser.add_argument('pClientName')
+parser.add_argument('pEnvironment')
+parser.add_argument('pTenantId')
+parser.add_argument('pClientId')
+parser.add_argument('pClientSecret')
+parser.add_argument('pInvestigationId')
+parser.add_argument('pServiceDeskId')
+
+args = parser.parse_args()
+
+# ======================= Client Credentials =======================
+# tenant settings
+# client = args.pClientName
+env = args.pEnvironment
+tenantId = args.pTenantId
+clientId = args.pClientId
+clientSecret = args.pClientSecret
+investigationId = args.pInvestigationId
+serviceDeskId = args.pServiceDeskId
+
+# set request_url according to environment
+requestUrl = TAEGIS_ENVIRONMENT_URLS[env]
+
+# get access_token using OAuth2 credentials
+access_token = get_token_by_oauth(
+    request_url = requestUrl,
+    client_id = clientId,
+    client_secret = clientSecret
+)
+
+service = GraphQLService(
+    tenant_id = tenantId,
+    environment=env
+)
+# =============================================================================================
+
+# Update service_desk_id
+# with service(access_token=access_token):
+#     results = service.investigations.mutation.update_investigation(
+#             investigation_id="16e9bcee-d75a-49d8-b234-36d2f4d5a7a3",
+#             investigation=UpdateInvestigationInput(service_desk_id="54321")
+#             )
+#     print(results)
+
+with service(access_token=access_token):
+    results = service.investigations.mutation.update_investigation(
+            investigation_id = investigationId,
+            investigation=UpdateInvestigationInput(service_desk_id = serviceDeskId.replace("-",""))
+            )
+    print(results)    

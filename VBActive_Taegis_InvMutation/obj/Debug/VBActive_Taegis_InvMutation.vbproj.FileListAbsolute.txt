@@ -1,0 +1,15 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\bin\Debug\VBActive_Taegis_InvMutation.exe.config
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\bin\Debug\VBActive_Taegis_InvMutation.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\bin\Debug\VBActive_Taegis_InvMutation.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\bin\Debug\VBActive_Taegis_InvMutation.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\bin\Debug\VBActive_Taegis_DLL.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\bin\Debug\VBActive_Taegis_DLL.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\bin\Debug\VBActive_Taegis_DLL.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\obj\Debug\VBActive_Taegis_InvMutation.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\obj\Debug\VBActive_Taegis_InvMutation.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\obj\Debug\VBActive_Taegis_InvMutation.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\obj\Debug\VBActive_Taegis_InvMutation.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\obj\Debug\VBActive.2303CB46.Up2Date
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\obj\Debug\VBActive_Taegis_InvMutation.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\obj\Debug\VBActive_Taegis_InvMutation.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_InvMutation\obj\Debug\VBActive_Taegis_InvMutation.pdb

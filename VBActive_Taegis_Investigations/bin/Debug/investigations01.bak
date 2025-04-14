@@ -1,0 +1,125 @@
+# INVESTIGATIONS COM PARÂMETROS
+""" 
+AUTOR: HERON JR
+DATA:  31/01/23
+ALT:   28/02/23-02/03/23-18/04/23-10/10/23
+US2: https://api.delta.taegis.secureworks.com
+Tenant Id: 137287
+Tenant Name: Netcenter - Production
+client_id: SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg
+client_secret: ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx
+ """
+from oauthlib.oauth2 import BackendApplicationClient
+from requests_oauthlib import OAuth2Session
+from graphqlclient import GraphQLClient
+import json
+import os
+
+from datetime import datetime, timedelta
+# yesterday = datetime.now() - timedelta(days=1)
+
+# DEFINIÇÃO DOS PARÂMETROS EXTERNOS - 18/04/23
+# pClientName: Nome do cliente
+# pTenantId: Tenant ID do cliente
+# pClientSecret: Código secreto do cliente
+# O processo será automatizado pelo programa VB.Net de chamada a partir de parâmetros fornecidos na chamada do programa em Python.
+
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('pTenantId')
+parser.add_argument('pClientId')
+parser.add_argument('pClientSecret')
+args = parser.parse_args()
+
+TENANT_ID = args.pTenantId
+CLIENT_ID = args.pClientId
+CLIENT_SECRET = args.pClientSecret
+
+# client_id='SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg'
+# client_secret='ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx'
+client = BackendApplicationClient(client_id=CLIENT_ID)
+oauth_client = OAuth2Session(client=client)
+token = oauth_client.fetch_token(token_url='https://api.delta.taegis.secureworks.com/auth/api/v2/auth/token', client_id=CLIENT_ID,
+                              client_secret=CLIENT_SECRET)
+
+gql_client = GraphQLClient('https://api.delta.taegis.secureworks.com/graphql')
+gql_client.inject_token("Bearer " + token['access_token'], "Authorization")
+
+print('TODAS AS INVESTIGATIONS')
+print('=======================\n')
+
+# Todas as investigações ********************************************************
+result = gql_client.execute('''
+{
+  allInvestigations {
+    id
+    description
+    status
+    priority
+    created_at
+    updated_at
+    archived_at
+    created_by
+    type
+    service_desk_id                            
+    shortId
+  }
+}
+''')
+print(result)
+
+# Arquivo de saída JSON
+arquivo = open('investigations01_' + TENANT_ID + '_' + datetime.now().strftime('%Y%m%d') + '.json', 'w')
+arquivo.write(json.dumps(result, indent=4))
+arquivo.close()
+
+
+# Investigações Fechadas  ********************************************************
+# print('\nTODAS AS INVESTIGATIONS FECHADAS')
+# print('================================\n')
+# result = gql_client.execute('''
+# {
+#   allInvestigations(status: "Closed: Threat Mitigated") {
+#     id
+#     description
+#     status
+#   }
+# }
+# ''')
+# print(result)
+
+# # Arquivo de saída JSON
+# arquivo = open('investig_fechadas_'  + datetime.now().strftime('%Y%m%d') + '.json', 'w')
+# arquivo.write(json.dumps(result, indent=4))
+# arquivo.close()
+
+# Now lets create an investigation  ********************************************************
+# result = gql_client.execute('''
+# mutation {
+#   createInvestigation(investigation: {
+#      description: "testing",
+#      status: "Open",
+#      contributors: [],
+#      key_findings: "",
+#      tags: [],
+#      genesis_alerts: [],
+#      genesis_events: [],
+#      alerts: [],
+#      events: [],
+#      assets: [],
+#      auth_credentials: []
+#   }) {
+#     id
+#     description
+#     status
+#   }
+# }
+# ''')
+# print('\nINVESTIGATION CRIADA')
+# print('====================\n')
+# print(result)
+
+# # Arquivo de saída JSON
+# arquivo = open('investig_criada_'  + datetime.now().strftime('%Y%m%d') + '.json', 'w')
+# arquivo.write(json.dumps(result, indent=4))
+# arquivo.close()

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+VBActive_Taegis_Investigations_Auto1
+</name>
+</assembly>
+<members>
+<member name="T:VBActive_Taegis_Investigations_Auto1.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:VBActive_Taegis_Investigations_Auto1.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:VBActive_Taegis_Investigations_Auto1.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:VBActive_Taegis_Investigations_Auto1.Modulo_Active_Taegis_Investigations_Auto1">
+ <summary>
+ Sistema Active - VS2022
+ Processa o promeiro passo da extração de investigações da Taegis para a geração do arquivo alerts01_yyyymmdd.json
+ Autor: Heron Domingues Jr
+ Data:  17/03/23
+ Alteração Data: 18/04/23
+ 19/03/24-21/03/24
+ Obs: Nas propriedades do projeto desmarcar a opção "enable application framework" e mudar a caixa "Startup Object" para a Sub Main deste módulo
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:VBActive_Taegis_Investigations_Auto1.Proj.VersaoAuto">
+ <summary>
+ Retorna a versão automática da aplicação
+ </summary>
+ <returns></returns>
+</member>
+</members>
+</doc>

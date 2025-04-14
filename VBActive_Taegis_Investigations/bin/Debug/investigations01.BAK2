@@ -1,0 +1,206 @@
+# INVESTIGATIONS COM PARÂMETROS
+""" 
+AUTOR: HERON JR
+DATA:  31/01/23
+ALT:   28/02/23-02/03/23-18/04/23-10/10/23
+       10/06/24 - TROCA DE QUERY - QUERY ANTERIOR DESATIVADA
+       19/03/24 - MUDANÇA DE QUERY DE AllInvestigations para InvestigationsSearch
+       20/03/24 - MUDANÇA DE QUERY DE InvestigationsSearch para InvestigationsV2
+                  A PARTIR DE AGORA ESTE PROGRAMA FAZ A COLETA E CONVERSÃO PARA JSON E PARA CSV
+US2: https://api.delta.taegis.secureworks.com
+Tenant Id: 137287
+Tenant Name: Netcenter - Production
+client_id: SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg
+client_secret: ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx
+ """
+import csv
+from oauthlib.oauth2 import BackendApplicationClient
+from requests_oauthlib import OAuth2Session
+from graphqlclient import GraphQLClient
+import json
+import os
+# from gql import gql
+
+from datetime import datetime, timedelta
+# yesterday = datetime.now() - timedelta(days=1)
+
+# DEFINIÇÃO DOS PARÂMETROS EXTERNOS - 18/04/23
+# pTenantId: Tenant ID do cliente
+# pClientSecret: Código secreto do cliente
+# O processo será automatizado pelo programa VB.Net de chamada a partir de parâmetros fornecidos na chamada do programa em Python.
+
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('pTenantId')
+parser.add_argument('pClientId')
+parser.add_argument('pClientSecret')
+args = parser.parse_args()
+
+TENANT_ID = args.pTenantId
+CLIENT_ID = args.pClientId
+CLIENT_SECRET = args.pClientSecret
+
+# ÁREA DE TESTES ==> COMENTAR LINHAS ACIMA DE import argparse ATÉ CLIENT_SECRET = args.pClientSecret
+# ==================================================================================================
+# TENANT = 'NETCENTER'
+# TENANT_ID = "137287"
+# CLIENT_ID = "SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg"
+# CLIENT_SECRET = "ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx"
+
+# TENANT = 'NORTEC'
+# TENANT_ID = '138529'
+# CLIENT_ID = 'p0redWh1UyYnJxmaL6YYoCbmHBuf4vLA'
+# CLIENT_SECRET = 'yc5vFC_RFsFQzaYk_uc9thToqBagQaLEPZ-Hf4JJMZF4NuReNY6--eDlD9SvZDf-'
+
+# TENANT = 'TECHNOS'
+# TENANT_ID = '142779'
+# CLIENT_ID = '2rvSMDA40yFD5BlnN05qzrJQ6tw1xP1P'
+# CLIENT_SECRET = 'f9Hl-QbK3D6BOBcToyNGuq6lAVCzio85GszUnpp9lw98iRx-5_H5oOWQAaUkYA3G'
+
+# TENANT = 'LOPES_BSJ'
+# TENANT_ID = '146127'
+# CLIENT_ID = 'fAJGVCs32Cq0vSJW5D9LsyNAlwNZ6z5U'
+# CLIENT_SECRET = 'U2sGHnwwN6JH1-15E23vstUV6kUk5Co0MOXnd_gCBhHkk62PsXzK2ap6MDNg6uJV'
+
+# TENANT = 'INC'
+# TENANT_ID = '148351'
+# CLIENT_ID = 'QJsiirGqZAcTIvHbfZoeJRe3LgYk1zuw'
+# CLIENT_SECRET = 'hxaIGOtB4vqx06rhhSADCqanTSI25K7rFRXcWcrtcuJLglw_t5rTSt0XyIshM2P3'
+
+# TENANT = 'PINHEIRO GUIMARAES'
+# TENANT_ID = '148507'
+# CLIENT_ID = 'M0qQ4hBGyfvz81JYAL7789rZQDkkd05Q'
+# CLIENT_SECRET = '3FjyFdScwUWhWVRgvsSAgE3blHSJ8hcwQPrwq94czP_uqS-zka8SeHB8jnydMRgo'
+
+
+client = BackendApplicationClient(client_id=CLIENT_ID)
+oauth_client = OAuth2Session(client=client)
+token = oauth_client.fetch_token(token_url='https://api.delta.taegis.secureworks.com/auth/api/v2/auth/token', client_id=CLIENT_ID,
+                              client_secret=CLIENT_SECRET)
+
+gql_client = GraphQLClient('https://api.delta.taegis.secureworks.com/graphql')
+gql_client.inject_token("Bearer " + token['access_token'], "Authorization")
+
+print('TODAS AS INVESTIGATIONS')
+print('=======================\n')
+
+# Todas as investigações ********************************************************
+
+# QUERY allInvestigations DESATIVADA - TROCA PARA investigationsSearch em 10/06/24
+# Ainda aguardando resposta da Taegis porque a nova query não está funcionando
+# Initialize variables for pagination
+page = 1
+per_page = 50  # Increase this to fetch more per request (check API max limit)
+all_investigations = []
+count_json_item = 0
+
+while True:
+    # Define the GraphQL query as a raw string
+    # ATENÇÃO: O ANTIGO CAMPO DESCRIPTION (allInvestigations) AGORA É O TITLE NESTA NOVA QUERY - 20/03/25
+    query = '''
+    query Investigations($arguments: InvestigationsV2Arguments!) {
+      investigationsV2(arguments: $arguments) {
+        investigations {
+          id
+          title
+          status
+          priority
+          createdAt
+          updatedAt
+          archivedAt
+          createdById
+          type
+          serviceDeskId
+          shortId
+        }
+        totalCount
+      }
+    }
+    '''
+
+# EXEMPLOS DE COMO SUBSTITUIR UM CAMPO POR OUTRO NA QUERY (RENAME)
+# description: keyFindings  # Renamed to match your original field
+# archivedAt: updatedAt  # No explicit archivedAt, using updatedAt as proxy
+# serviceDeskId: shortId  # Renamed to match your original field
+
+    # Variables with the arguments structure
+# Variables with the arguments structure
+    variables = {
+        "arguments": {
+            "page": page,
+            "perPage": per_page,
+            "cql": "archivedAt IS NULL"
+        }
+    }
+    
+    count_json_item += 1
+
+    # Debug: Print the query and variables before sending
+    # print(f"Sending query:\n{query}")
+    # print(f"With variables: {variables}")
+
+    try:
+        # Execute the query with variables and parse the JSON response
+        result = json.loads(gql_client.execute(query, variables))
+        
+        # if count_json_item < 5:
+            # Debug: Print the raw result to inspect it
+            # print(f"Raw result: {result}")
+        
+        # Extract investigations and total count
+        investigations = result["data"]["investigationsV2"]["investigations"]
+        total_count = result["data"]["investigationsV2"]["totalCount"]
+
+        # Add the current page's investigations to the list
+        all_investigations.extend(investigations)
+
+        # Check if we've fetched all investigations
+        if len(all_investigations) >= total_count:
+            break
+
+        # Move to the next page
+        page += 1
+
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        break
+
+# Print or process the results
+print(f"Total investigations fetched: {len(all_investigations)}")
+# for inv in all_investigations:
+#     print(f"ID: {inv['id']}, Description: {inv['description']}, Status: {inv['status']}")
+
+    # print(result)
+
+# ===========================
+# JSON output file generation
+# ===========================
+arquivo = open('investigations01_' + TENANT_ID + '_' + datetime.now().strftime('%Y%m%d') + '.json', 'w')
+arquivo.write(json.dumps(all_investigations, indent=4))
+arquivo.close()
+
+# ===========================
+# CSV output file generation
+# ===========================
+csv_file = open('investigations02_' + TENANT_ID + '_' + datetime.now().strftime('%Y%m%d') + '.csv', 'w', newline='', encoding='utf-8')
+csv_writer = csv.writer(csv_file, delimiter=';')
+
+# Write the header
+csv_writer.writerow(['id', 'archivedAt', 'createdAt', 'description', 'priority', 'status', 'type', 'updatedAt', 'serviceDeskId', 'shortId'])
+
+# Write the data rows
+for inv in all_investigations:
+    csv_writer.writerow([
+        inv['id'],
+        inv['archivedAt'],
+        inv['createdAt'],
+        inv['title'],
+        inv['priority'],
+        inv['status'],
+        inv['type'],
+        inv['updatedAt'],
+        inv['serviceDeskId'],
+        inv['shortId']
+    ])
+
+csv_file.close()

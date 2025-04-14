@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+VBActive_Taegis_Alerts_Auto1
+</name>
+</assembly>
+<members>
+<member name="T:VBActive_Taegis_Alerts_Auto1.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:VBActive_Taegis_Alerts_Auto1.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:VBActive_Taegis_Alerts_Auto1.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:VBActive_Taegis_Alerts_Auto1.Modulo_Active_Taegis_Alerts_Auto1">
+ <summary>
+ Processa o promeiro passo da extração de alertas da Taegis para a geração do arquivo alerts01_yyyymmdd.json - VS2022
+ Autor: Heron Domingues Jr
+ Data:  14/03/23
+ Alteração Data: 04/04/23-07/03/24-21/03/24
+ 27/12/24: Inclusão do campo metadata_resolved_at
+ Obs: Nas propriedades do projeto desmarcar a opção "enable application framework" e mudar a caixa "Startup Object" para a Sub Main deste módulo
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:VBActive_Taegis_Alerts_Auto1.Modulo_Active_Taegis_Alerts_Auto1.OcorrenciasTacticsAnt(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna a quantidade de ocorrências do substring "tactics" no campo tactics_technique_id 
+ </summary>
+ <param name="strTactics"></param>
+ <returns></returns>
+</member>
+<member name="M:VBActive_Taegis_Alerts_Auto1.Modulo_Active_Taegis_Alerts_Auto1.OcorrenciasTechnique_Id(System.String,System.String)">
+ <summary>
+ Retorna a quantidade de ocorrências do substring "technique_id" no campo tactics_technique_id 
+ </summary>
+ <param name="strTechniqueId"></param>
+ <returns></returns>
+</member>
+<member name="M:VBActive_Taegis_Alerts_Auto1.Proj.VersaoAuto">
+ <summary>
+ Retorna a versão automática da aplicação
+ </summary>
+ <returns></returns>
+</member>
+</members>
+</doc>

@@ -1,0 +1,179 @@
+{
+    "data": {
+        "alertsServiceSearch": {
+            "status": "OK",
+            "reason": "success",
+            "alerts": {
+                "list": [
+                    {
+                        "enrichment_details": [
+                            {
+                                "mitre_attack_info": {
+                                    "tactics": [
+                                        "defense-evasion"
+                                    ],
+                                    "technique_id": "T1036"
+                                }
+                            },
+                            {
+                                "mitre_attack_info": {
+                                    "tactics": [
+                                        "persistence",
+                                        "privilege-escalation",
+                                        "defense-evasion"
+                                    ],
+                                    "technique_id": "T1574.002"
+                                }
+                            }
+                        ],
+                        "id": "alert://priv:event-filter:146127:1744561684978:66503dc4-b467-5299-9fb2-1d2c141d6f64",
+                        "tenant_id": "146127",
+                        "status": "OPEN",
+                        "suppressed": false,
+                        "suppression_rules": null,
+                        "resolution_reason": "",
+                        "attack_technique_ids": [
+                            "T1036",
+                            "T1574.002"
+                        ],
+                        "entities": {
+                            "entities": [
+                                "fileName:\\Device\\HarddiskVolume3\\Windows\\servicing\\LCU\\Package_for_RollupFix~31bf3856ad364e35~amd64~~19041.5487.1.4\\wow64_microsoft-windows-aclui_31bf3856ad364e35_10.0.19041.4355_none_d41928399d41b34e\\f\\aclui.dll",
+                                "hostId:f3b1f096-d563-5693-9b1c-5bb604b09b4c",
+                                "hostName:BSJ1215",
+                                "hostNameAndHostId:BSJ1215:f3b1f096-d563-5693-9b1c-5bb604b09b4c",
+                                "hostNameAndHostIpAddress:BSJ1215:fe80::3865:1da5:e81a:f258",
+                                "sensorHostId:f3b1f096-d563-5693-9b1c-5bb604b09b4c",
+                                "sensorId:f3b1f096-d563-5693-9b1c-5bb604b09b4c",
+                                "sensorType:ENDPOINT_TAEGIS"
+                            ],
+                            "relationships": [
+                                {
+                                    "from_entity": "hostName:BSJ1215",
+                                    "relationship": "is",
+                                    "to_entity": "ipAddress:fe80::3865:1da5:e81a:f258"
+                                },
+                                {
+                                    "from_entity": "hostName:BSJ1215",
+                                    "relationship": "is",
+                                    "to_entity": "sensorHostId:f3b1f096-d563-5693-9b1c-5bb604b09b4c"
+                                }
+                            ]
+                        },
+                        "metadata": {
+                            "engine": {
+                                "name": "app:event-filter"
+                            },
+                            "creator": {
+                                "detector": {
+                                    "version": "v0.35.23",
+                                    "detector_id": "app:event-filter"
+                                },
+                                "rule": {
+                                    "rule_id": "8e0b56f5-2f02-4f76-afad-e0697b3fc3a1",
+                                    "version": "sha1=6ae5ff058a4609ab2b1d4c50ed08227f9232574b-1740594116"
+                                }
+                            },
+                            "title": "RESEARCH: Security Descriptor Editor in Non-Standard Location (filemod)",
+                            "description": "A filemod event associated with the Security Descriptor Editor (Aclui.dll) running from a non-standard directory was identified. This activity may indicate that threat actors are using Aclui.dll to side-load malware.\n\nExample: \n> C:\\Users\\<username>\\AppData\\Local\\Temp\\Aclui.dll\n\nThe expected path for this file is in the \"\\Windows\\System32\" directory.",
+                            "confidence": 0,
+                            "severity": 0,
+                            "first_resolved_at": null,
+                            "created_at": {
+                                "seconds": 1744561684
+                            }
+                        },
+                        "investigation_ids": null,
+                        "sensor_types": [
+                            "ENDPOINT_TAEGIS"
+                        ]
+                    },
+                    {
+                        "enrichment_details": [
+                            {
+                                "mitre_attack_info": {
+                                    "tactics": [
+                                        "defense-evasion"
+                                    ],
+                                    "technique_id": "T1036"
+                                }
+                            },
+                            {
+                                "mitre_attack_info": {
+                                    "tactics": [
+                                        "persistence",
+                                        "privilege-escalation",
+                                        "defense-evasion"
+                                    ],
+                                    "technique_id": "T1574.002"
+                                }
+                            }
+                        ],
+                        "id": "alert://priv:event-filter:146127:1744561414852:487b359d-a9e6-560c-9f8e-c59f51e4236d",
+                        "tenant_id": "146127",
+                        "status": "OPEN",
+                        "suppressed": false,
+                        "suppression_rules": null,
+                        "resolution_reason": "",
+                        "attack_technique_ids": [
+                            "T1036",
+                            "T1574.002"
+                        ],
+                        "entities": {
+                            "entities": [
+                                "fileName:\\Device\\HarddiskVolume3\\Windows\\servicing\\LCU\\Package_for_RollupFix~31bf3856ad364e35~amd64~~19041.5487.1.4\\amd64_microsoft-windows-aclui_31bf3856ad364e35_10.0.19041.4355_none_c9c47de768e0f153\\f\\aclui.dll",
+                                "hostId:f3b1f096-d563-5693-9b1c-5bb604b09b4c",
+                                "hostName:BSJ1215",
+                                "hostNameAndHostId:BSJ1215:f3b1f096-d563-5693-9b1c-5bb604b09b4c",
+                                "hostNameAndHostIpAddress:BSJ1215:fe80::3865:1da5:e81a:f258",
+                                "sensorHostId:f3b1f096-d563-5693-9b1c-5bb604b09b4c",
+                                "sensorId:f3b1f096-d563-5693-9b1c-5bb604b09b4c",
+                                "sensorType:ENDPOINT_TAEGIS"
+                            ],
+                            "relationships": [
+                                {
+                                    "from_entity": "hostName:BSJ1215",
+                                    "relationship": "is",
+                                    "to_entity": "ipAddress:fe80::3865:1da5:e81a:f258"
+                                },
+                                {
+                                    "from_entity": "hostName:BSJ1215",
+                                    "relationship": "is",
+                                    "to_entity": "sensorHostId:f3b1f096-d563-5693-9b1c-5bb604b09b4c"
+                                }
+                            ]
+                        },
+                        "metadata": {
+                            "engine": {
+                                "name": "app:event-filter"
+                            },
+                            "creator": {
+                                "detector": {
+                                    "version": "v0.35.23",
+                                    "detector_id": "app:event-filter"
+                                },
+                                "rule": {
+                                    "rule_id": "8e0b56f5-2f02-4f76-afad-e0697b3fc3a1",
+                                    "version": "sha1=6ae5ff058a4609ab2b1d4c50ed08227f9232574b-1740594116"
+                                }
+                            },
+                            "title": "RESEARCH: Security Descriptor Editor in Non-Standard Location (filemod)",
+                            "description": "A filemod event associated with the Security Descriptor Editor (Aclui.dll) running from a non-standard directory was identified. This activity may indicate that threat actors are using Aclui.dll to side-load malware.\n\nExample: \n> C:\\Users\\<username>\\AppData\\Local\\Temp\\Aclui.dll\n\nThe expected path for this file is in the \"\\Windows\\System32\" directory.",
+                            "confidence": 0,
+                            "severity": 0,
+                            "first_resolved_at": null,
+                            "created_at": {
+                                "seconds": 1744561414
+                            }
+                        },
+                        "investigation_ids": null,
+                        "sensor_types": [
+                            "ENDPOINT_TAEGIS"
+                        ]
+                    }
+                ],
+                "total_results": 2
+            }
+        }
+    }
+}

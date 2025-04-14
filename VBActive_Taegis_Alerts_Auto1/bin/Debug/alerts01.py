@@ -1,0 +1,159 @@
+# ALERTS - RECUPERA OS ALERTAS DE UM CLIENTE DO DIA ANTERIOR
+""" 
+AUTOR: HERON JR
+DATA:  24/01/23
+ALT:   26/01/23-03/04/23
+       27/12/24: INCLUSÃO DO CAMPO FIRST_RESOLVED_AT
+US2: https://api.delta.taegis.secureworks.com
+client_name	tenant_id	  client_id	                        client_secret
+NETCENTER   137287	    SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg	ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx
+NORTEC	    138529	    p0redWh1UyYnJxmaL6YYoCbmHBuf4vLA	yc5vFC_RFsFQzaYk_uc9thToqBagQaLEPZ-Hf4JJMZF4NuReNY6--eDlD9SvZDf-
+TECHNOS	    142779	    2rvSMDA40yFD5BlnN05qzrJQ6tw1xP1P	f9Hl-QbK3D6BOBcToyNGuq6lAVCzio85GszUnpp9lw98iRx-5_H5oOWQAaUkYA3G
+ """
+
+# Setup dependencies
+from oauthlib.oauth2 import BackendApplicationClient
+from requests_oauthlib import OAuth2Session
+import json
+import os
+
+# DEFINIÇÃO DOS PARÂMETROS EXTERNOS
+# pClientName: Nome do cliente
+# pTenantId: Tenant ID do cliente
+# O processo será automatizado pelo programa VB.Net de chamada que calculará a data do dia seguinte a partir da data informada como parâmetro.
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('pTenantId')
+parser.add_argument('pClientId')
+parser.add_argument('pClientSecret')
+args = parser.parse_args()
+
+API_ENDPOINT='https://api.delta.taegis.secureworks.com'
+TENANT_ID = args.pTenantId
+CLIENT_ID = args.pClientId
+CLIENT_SECRET = args.pClientSecret
+
+ # Fetch and test client credentials
+client = BackendApplicationClient(client_id=CLIENT_ID)
+oauth_client = OAuth2Session(client=client)
+token = oauth_client.fetch_token(token_url=f'{API_ENDPOINT}/auth/api/v2/auth/token', client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
+
+# testing access
+r = oauth_client.get(f"{API_ENDPOINT}/assets/version")
+print(r.content)
+
+# Search Alerts.
+alertsQuery = """
+query ($searchRequestInput: SearchRequestInput)
+{
+  alertsServiceSearch(in: $searchRequestInput) {
+    status
+    reason
+    alerts {
+      list {
+        enrichment_details {
+          mitre_attack_info {
+            tactics
+            technique_id
+          }
+        }
+        id
+        tenant_id
+        status
+        suppressed
+        suppression_rules {
+          id
+          version
+        }
+        resolution_reason
+        attack_technique_ids
+        entities{
+          entities
+          relationships{
+            from_entity
+            relationship
+            to_entity
+          }
+        }
+        metadata {
+          engine {
+            name
+          }
+          creator {
+            detector {
+              version
+              detector_id
+            }
+            rule {
+              rule_id
+              version
+            }
+          }
+          title
+          description
+          confidence
+          severity
+          first_resolved_at {
+            seconds
+          }
+          created_at {
+            seconds
+          }
+        }
+        investigation_ids {
+          id
+        }
+        sensor_types
+      }
+      total_results
+    }
+  }
+}
+"""
+
+auth = "Bearer " + token['access_token']
+
+# Parâmetros originais
+# params = {
+#     "searchRequestInput": {
+#         "cql_query": "from alert severity >= 0.7 and status='OPEN' EARLIEST='2022-05-02T16:09:11.012Z' AND LATEST='2022-05-03T16:09:11.012Z'",
+#         "limit": 1
+#     }
+# }
+
+# Parâmetros Fixos
+# params = {
+#     "searchRequestInput": {
+#         "cql_query": "EARLIEST='2023-01-24T00:00:00.000Z' AND LATEST='2023-01-25T00:00:00.000Z'",
+#         "limit": 10000
+#     }
+# }
+
+# Parâmetros para o dia anterior (24 horas)
+from datetime import datetime, timedelta
+yesterday = datetime.now() - timedelta(days=1)
+
+print("EARLIEST= '" + yesterday.strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "' AND LATEST= '" + datetime.now().strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "'")
+params = {
+    "searchRequestInput": {
+        "cql_query": "EARLIEST= '" + yesterday.strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "' AND LATEST= '" + datetime.now().strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "'",
+        "limit": 10000
+    }
+}
+
+# print(yesterday.strftime('%Y-%m-%d') + 'T00:00:00.000Z')
+# print(datetime.now().strftime('%Y-%m-%d') + 'T00:00:00.000Z')
+
+r = oauth_client.post(f'{API_ENDPOINT}/graphql', json={
+        "query": alertsQuery,
+        "variables": params,
+    }, headers={"X-Tenant-Context": TENANT_ID, "Authorization" : auth})
+
+
+# We can now decode the response and print it out
+result = json.loads(r.content)
+
+print(json.dumps(result, indent=4))
+arquivo = open('alerts01_' + TENANT_ID + '_' + yesterday.strftime('%Y%m%d') + '.json', 'w')
+arquivo.write(json.dumps(result, indent=4))
+arquivo.close()

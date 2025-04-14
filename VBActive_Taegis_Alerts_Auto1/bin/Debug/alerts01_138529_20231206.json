@@ -1,0 +1,353 @@
+{
+    "data": {
+        "alertsServiceSearch": {
+            "status": "OK",
+            "reason": "success",
+            "alerts": {
+                "list": [
+                    {
+                        "id": "alert://priv:improbable-logon-detector:138529:1701892747973:8fdd6ed0-1c0b-5529-b670-f5dec680e0e7",
+                        "tenant_id": "138529",
+                        "status": "OPEN",
+                        "suppressed": false,
+                        "suppression_rules": null,
+                        "resolution_reason": "",
+                        "attack_technique_ids": [
+                            "TA0006"
+                        ],
+                        "entities": {
+                            "entities": [
+                                "city:3451190",
+                                "country:3469034",
+                                "ipAddress:2804:388:502c:afc9:0:5d:3fc5:4c01",
+                                "latLon:-22.9201,-43.0811",
+                                "sensorId:4891bf7a-ad0c-44b6-88ac-904b92b4842e",
+                                "sensorType:MICROSOFT_OFFICE_MANAGEMENT",
+                                "sourceIpAddress:2804:388:502c:afc9:0:5d:3fc5:4c01",
+                                "targetAuthDomainName:a66ffd7b-ae7e-4752-81f9-7c8f2f39c4c0",
+                                "targetUserName:a66ffd7b-ae7e-4752-81f9-7c8f2f39c4c0",
+                                "userName:a66ffd7b-ae7e-4752-81f9-7c8f2f39c4c0"
+                            ],
+                            "relationships": [
+                                {
+                                    "from_entity": "sourceIpAddress:2804:388:502c:afc9:0:5d:3fc5:4c01",
+                                    "relationship": "geolocatedAt",
+                                    "to_entity": "city:3451190"
+                                },
+                                {
+                                    "from_entity": "sourceIpAddress:2804:388:502c:afc9:0:5d:3fc5:4c01",
+                                    "relationship": "geolocatedAt",
+                                    "to_entity": "country:3469034"
+                                },
+                                {
+                                    "from_entity": "sourceIpAddress:2804:388:502c:afc9:0:5d:3fc5:4c01",
+                                    "relationship": "geolocatedAt",
+                                    "to_entity": "latLon:-22.9201,-43.0811"
+                                }
+                            ]
+                        },
+                        "metadata": {
+                            "engine": {
+                                "name": "app:detect:improbable-logon-detector"
+                            },
+                            "creator": {
+                                "detector": {
+                                    "version": "0.0.1",
+                                    "detector_id": "app:detect:improbable-logon-detector"
+                                },
+                                "rule": {
+                                    "rule_id": "ff386ff2-3697-59a9-83e5-c7a1f2929c87",
+                                    "version": "1699366426"
+                                }
+                            },
+                            "title": "RESEARCH: XDR has detected a successful authentication with rare or previously unobserved properties by a66ffd7b-ae7e-4752-81f9-7c8f2f39c4c0 from 2804:388:502c:afc9:0:5d:3fc5:4c01",
+                            "description": "Based on an 8 days profile, this user mostly connected from an IP associated with ASN 7738. ASN 22085 is considered anomalous because only 0 out of 134 (0.00%) had successful logins.",
+                            "confidence": 0.5,
+                            "severity": 0.1,
+                            "created_at": {
+                                "seconds": 1701892747
+                            }
+                        },
+                        "investigation_ids": null,
+                        "sensor_types": [
+                            "MICROSOFT_OFFICE_MANAGEMENT"
+                        ]
+                    },
+                    {
+                        "id": "alert://priv:tactic-detector:138529:1701892741914:3377084c-2d3f-56f8-9b54-20cb0eb456c6",
+                        "tenant_id": "138529",
+                        "status": "OPEN",
+                        "suppressed": false,
+                        "suppression_rules": null,
+                        "resolution_reason": "",
+                        "attack_technique_ids": [
+                            "T1110",
+                            "T1110.001"
+                        ],
+                        "entities": {
+                            "entities": [
+                                "ipAddress:2804\u0001388\u0001502c\u0001afc9\u00010\u00015d\u00013fc5\u00014c01",
+                                "ipAddress:2804:388:502c:afc9:0:5d:3fc5:4c01",
+                                "sensorId:4891bf7a-ad0c-44b6-88ac-904b92b4842e",
+                                "sensorType:MICROSOFT_OFFICE_MANAGEMENT",
+                                "sourceIpAddress:2804:388:502c:afc9:0:5d:3fc5:4c01",
+                                "targetAuthDomainName:a66ffd7b-ae7e-4752-81f9-7c8f2f39c4c0",
+                                "targetUserName:a66ffd7b-ae7e-4752-81f9-7c8f2f39c4c0",
+                                "userName:a66ffd7b-ae7e-4752-81f9-7c8f2f39c4c0"
+                            ],
+                            "relationships": null
+                        },
+                        "metadata": {
+                            "engine": {
+                                "name": "app:detect:tacticGraphDetectorAuth"
+                            },
+                            "creator": {
+                                "detector": {
+                                    "version": "2.0.0",
+                                    "detector_id": "app:detect:tactic-detector"
+                                },
+                                "rule": {
+                                    "rule_id": "BruteForceAttemptAzureIdentitySingleSource:13290846-539b-11ee-8c99-0242ac120002",
+                                    "version": "1689885755"
+                                }
+                            },
+                            "title": "RESEARCH: Possible Brute Force Attempt for Azure Identity (Single Source)",
+                            "description": "A series of authentication events for activity consistent with a brute force attempt for a single user account was identified. This activity may indicate that a threat actor is attempting to brute force a password for one or more user accounts.",
+                            "confidence": 0,
+                            "severity": 0.05,
+                            "created_at": {
+                                "seconds": 1701892741
+                            }
+                        },
+                        "investigation_ids": null,
+                        "sensor_types": [
+                            "MICROSOFT_OFFICE_MANAGEMENT"
+                        ]
+                    },
+                    {
+                        "id": "alert://priv:event-filter:138529:1701882358756:c903e3e4-442d-57c2-a77e-78793681b43e",
+                        "tenant_id": "138529",
+                        "status": "OPEN",
+                        "suppressed": false,
+                        "suppression_rules": [],
+                        "resolution_reason": "",
+                        "attack_technique_ids": [
+                            "T1059.003"
+                        ],
+                        "entities": {
+                            "entities": [
+                                "fileMd5:cb092cf5788f76dd681b2dc76fa5c06a",
+                                "fileMd5:f4f684066175b77e0c3a000549d2922c",
+                                "fileName:cmd.exe",
+                                "fileName:svchost.exe",
+                                "fileSha1:99ae9c73e9bee6f9c76d6f4093a9882df06832cf",
+                                "fileSha1:fd36da2a787fbc8f73ba01921f8605a482f6d487",
+                                "hostId:3bd17df25d97372a5d42b22b81a84162",
+                                "hostName:NTQSVR12",
+                                "hostNameAndHostId:NTQSVR12:3bd17df25d97372a5d42b22b81a84162",
+                                "sensorHostId:3bd17df25d97372a5d42b22b81a84162",
+                                "sensorId:3bd17df25d97372a5d42b22b81a84162",
+                                "sensorType:ENDPOINT_REDCLOAK",
+                                "userName:NORTECQUIMICA\\Administrador"
+                            ],
+                            "relationships": [
+                                {
+                                    "from_entity": "fileName:cmd.exe",
+                                    "relationship": "executedOn",
+                                    "to_entity": "sensorHostId:3bd17df25d97372a5d42b22b81a84162"
+                                },
+                                {
+                                    "from_entity": "fileName:svchost.exe",
+                                    "relationship": "executes",
+                                    "to_entity": "fileName:cmd.exe"
+                                },
+                                {
+                                    "from_entity": "fileSha1:99ae9c73e9bee6f9c76d6f4093a9882df06832cf",
+                                    "relationship": "isAlso",
+                                    "to_entity": "fileName:cmd.exe"
+                                },
+                                {
+                                    "from_entity": "fileSha1:99ae9c73e9bee6f9c76d6f4093a9882df06832cf",
+                                    "relationship": "executedOn",
+                                    "to_entity": "sensorHostId:3bd17df25d97372a5d42b22b81a84162"
+                                },
+                                {
+                                    "from_entity": "hostName:NTQSVR12",
+                                    "relationship": "is",
+                                    "to_entity": "sensorHostId:3bd17df25d97372a5d42b22b81a84162"
+                                },
+                                {
+                                    "from_entity": "userName:NORTECQUIMICA\\Administrador",
+                                    "relationship": "executes",
+                                    "to_entity": "fileSha1:99ae9c73e9bee6f9c76d6f4093a9882df06832cf"
+                                }
+                            ]
+                        },
+                        "metadata": {
+                            "engine": {
+                                "name": "app:event-filter"
+                            },
+                            "creator": {
+                                "detector": {
+                                    "version": "v0.33.5",
+                                    "detector_id": "app:event-filter"
+                                },
+                                "rule": {
+                                    "rule_id": "69df7c1c-8b64-4ee2-9d21-2b51077576c7",
+                                    "version": "sha1=959fd7630ac0353c0a88c8bf14b87f06a821490a-1701880985"
+                                }
+                            },
+                            "title": "Suspect Execution of Command Shell via Svchost",
+                            "description": "A process event associated with a svchost process executing a Windows command shell (cmd.exe) was identified. This activity may indicate that the host has been compromised with malware.\n\nExample:\n> svchost.exe -k DcomLaunch -p -s LSM\n  > cmd.exe /c malware.exe 2>&1",
+                            "confidence": 0.1,
+                            "severity": 0.1,
+                            "created_at": {
+                                "seconds": 1701882358
+                            }
+                        },
+                        "investigation_ids": [],
+                        "sensor_types": [
+                            "ENDPOINT_REDCLOAK"
+                        ]
+                    },
+                    {
+                        "id": "alert://priv:dga:138529:1701844119394:e7f2f82d-87fd-5e20-872d-f7a7f9e971d4",
+                        "tenant_id": "138529",
+                        "status": "OPEN",
+                        "suppressed": false,
+                        "suppression_rules": null,
+                        "resolution_reason": "",
+                        "attack_technique_ids": [
+                            "T1323",
+                            "T1483"
+                        ],
+                        "entities": {
+                            "entities": [
+                                "hostId:3bd17df2b963eb9bf16a95a51ee0cf93",
+                                "hostName:NTQSVR10",
+                                "hostNameAndHostId:NTQSVR10:3bd17df2b963eb9bf16a95a51ee0cf93",
+                                "ipAddress:139.45.197.159",
+                                "ipDomain:ccboywgddqnnxb.xyz",
+                                "sensorHostId:3bd17df2b963eb9bf16a95a51ee0cf93",
+                                "sensorId:3bd17df2b963eb9bf16a95a51ee0cf93",
+                                "sensorType:ENDPOINT_REDCLOAK",
+                                "topPrivateIpDomain:ccboywgddqnnxb.xyz"
+                            ],
+                            "relationships": [
+                                {
+                                    "from_entity": "hostName:NTQSVR10",
+                                    "relationship": "is",
+                                    "to_entity": "sensorHostId:3bd17df2b963eb9bf16a95a51ee0cf93"
+                                },
+                                {
+                                    "from_entity": "ipDomain:ccboywgddqnnxb.xyz",
+                                    "relationship": "resolvedTo",
+                                    "to_entity": "ipAddress:139.45.197.159"
+                                },
+                                {
+                                    "from_entity": "sensorHostId:3bd17df2b963eb9bf16a95a51ee0cf93",
+                                    "relationship": "connectedTo",
+                                    "to_entity": "ipDomain:ccboywgddqnnxb.xyz"
+                                }
+                            ]
+                        },
+                        "metadata": {
+                            "engine": {
+                                "name": "app:detect:dga"
+                            },
+                            "creator": {
+                                "detector": {
+                                    "version": "1.9.0",
+                                    "detector_id": "app:detect:dga"
+                                },
+                                "rule": {
+                                    "rule_id": "f534d2b6-152f-5458-9774-f67a48728d1c",
+                                    "version": "1665757165"
+                                }
+                            },
+                            "title": "Suspicious domain 'ccboywgddqnnxb.xyz'",
+                            "description": "Identified a domain name that was potentially generated by a Domain Generation Algorithm (DGA). While various applications may legitimately use DGAs, it is also a technique used in various malware families.",
+                            "confidence": 0.49900427,
+                            "severity": 0.49900427,
+                            "created_at": {
+                                "seconds": 1701844119
+                            }
+                        },
+                        "investigation_ids": null,
+                        "sensor_types": [
+                            "ENDPOINT_REDCLOAK"
+                        ]
+                    },
+                    {
+                        "id": "alert://priv:event-filter:138529:1701828024424:4e58c24e-c4b3-5696-880d-ce4ed7c126bc",
+                        "tenant_id": "138529",
+                        "status": "OPEN",
+                        "suppressed": false,
+                        "suppression_rules": null,
+                        "resolution_reason": "",
+                        "attack_technique_ids": [
+                            "T1059.001",
+                            "T1070.006"
+                        ],
+                        "entities": {
+                            "entities": [
+                                "hostId:3bd17df25d97372a5d42b22b81a84162",
+                                "hostName:NTQSVR12",
+                                "hostNameAndHostId:NTQSVR12:3bd17df25d97372a5d42b22b81a84162",
+                                "programName:powershell",
+                                "scriptSha1:69bc6ee61a020057d7e9115996d89febef0e5c02",
+                                "sensorHostId:3bd17df25d97372a5d42b22b81a84162",
+                                "sensorId:3bd17df25d97372a5d42b22b81a84162",
+                                "sensorType:ENDPOINT_REDCLOAK"
+                            ],
+                            "relationships": [
+                                {
+                                    "from_entity": "hostName:NTQSVR12",
+                                    "relationship": "is",
+                                    "to_entity": "sensorHostId:3bd17df25d97372a5d42b22b81a84162"
+                                },
+                                {
+                                    "from_entity": "programName:powershell",
+                                    "relationship": "executes",
+                                    "to_entity": "scriptSha1:69bc6ee61a020057d7e9115996d89febef0e5c02"
+                                },
+                                {
+                                    "from_entity": "scriptSha1:69bc6ee61a020057d7e9115996d89febef0e5c02",
+                                    "relationship": "executedOn",
+                                    "to_entity": "sensorHostId:3bd17df25d97372a5d42b22b81a84162"
+                                }
+                            ]
+                        },
+                        "metadata": {
+                            "engine": {
+                                "name": "app:event-filter"
+                            },
+                            "creator": {
+                                "detector": {
+                                    "version": "v0.33.5",
+                                    "detector_id": "app:event-filter"
+                                },
+                                "rule": {
+                                    "rule_id": "af678dc0-e810-4234-a32a-eb5f6bae5133",
+                                    "version": "sha1=d1caee9b8ee79c7839a01958852482820073d8f4-1683909554"
+                                }
+                            },
+                            "title": "RESEARCH: PowerShell Timestomping Script (script block)",
+                            "description": "A script block event associated with the use of PowerShell to modify file timestamps has been identified. This may indicate that a threat actor is attempting to remove evidence.\n\nExample\n> powershell -ExecutionPolicy Bypass -WindowStyle Minimized -Command $FileItem = Get-Item \"\"\"C:\\Users\\admin\\notes.txt\"\"\" ; $FileItem.CreationTime = \"\"\"02/26/2019 22:00:27\"\"\" ; $FileItem.LastWriteTime = \"\"\"09/15/2018 07:28:25\"\"\" ; $FileItem.LastAccessTime = \"\"\"03/01/2019 17:23:58\"\"\"\"\n",
+                            "confidence": 0,
+                            "severity": 0,
+                            "created_at": {
+                                "seconds": 1701828024
+                            }
+                        },
+                        "investigation_ids": null,
+                        "sensor_types": [
+                            "ENDPOINT_REDCLOAK"
+                        ]
+                    }
+                ],
+                "total_results": 5
+            }
+        }
+    }
+}

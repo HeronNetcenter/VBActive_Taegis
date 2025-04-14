@@ -1,0 +1,35 @@
+{
+    "data": {
+        "getAllClusters": [
+            {
+                "createdAt": "2023-10-20T20:56:14Z",
+                "updatedAt": "2024-12-23T14:57:28Z",
+                "id": "463ec85d-d093-4770-82b3-585b7ee5aee5",
+                "role": "collector",
+                "name": "NTC1046",
+                "type": "OnPrem",
+                "clusterType": "ONPREM",
+                "description": "Collector - DTC Cirion",
+                "health": "Online",
+                "network": {
+                    "dhcp": null,
+                    "hostname": "NTC1046",
+                    "dns": [
+                        "10.10.0.5",
+                        "172.16.16.5"
+                    ],
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "deployments": [
+                    {
+                        "name": "connectors",
+                        "id": "89e11a9e-226b-44db-8b04-987ee825718f",
+                        "config": null
+                    }
+                ],
+                "status": null
+            }
+        ]
+    }
+}

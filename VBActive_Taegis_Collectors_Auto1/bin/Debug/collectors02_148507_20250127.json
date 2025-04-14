@@ -1,0 +1,64 @@
+{
+    "data": {
+        "getAllClusters": [
+            {
+                "clusterType": "ONPREM",
+                "createdAt": "2024-12-16T13:26:55Z",
+                "deployments": [
+                    {
+                        "config": null,
+                        "id": "4749f9b8-44ca-4990-b117-8f2adf390428",
+                        "name": "connectors"
+                    }
+                ],
+                "description": "Coletor de S\u00e3o Paulo",
+                "health": "Online",
+                "id": "3183e4e1-d49c-4ff7-b0a2-d285a9026181",
+                "name": "Collector-PGSP",
+                "network": {
+                    "dhcp": null,
+                    "dns": [
+                        "10.22.146.8",
+                        "192.168.3.22"
+                    ],
+                    "hostname": "MDR-SOC-PGSP",
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "role": "collector",
+                "status": null,
+                "type": "OnPrem",
+                "updatedAt": "2024-12-16T14:07:29Z"
+            },
+            {
+                "clusterType": "ONPREM",
+                "createdAt": "2024-12-16T14:17:55Z",
+                "deployments": [
+                    {
+                        "config": null,
+                        "id": "cbf16d07-1a44-4f10-9269-45c0a88e5d6b",
+                        "name": "connectors"
+                    }
+                ],
+                "description": "Coletor do Rio de Janeiro",
+                "health": "Online",
+                "id": "86270220-dc51-4c28-896d-67d7fc6d496e",
+                "name": "Collector-PGRJ",
+                "network": {
+                    "dhcp": null,
+                    "dns": [
+                        "10.22.146.9",
+                        "192.168.1.22"
+                    ],
+                    "hostname": "MDR-SOC-PGRJ",
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "role": "collector",
+                "status": null,
+                "type": "OnPrem",
+                "updatedAt": "2024-12-27T05:10:40Z"
+            }
+        ]
+    }
+}

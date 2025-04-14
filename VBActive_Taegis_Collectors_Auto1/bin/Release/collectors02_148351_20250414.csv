@@ -1,0 +1,2 @@
+Collector Num;Cluster Type;Created At;Deployments;Description;Health;ID;Name;DHCP;DNS;Hostnamr;NTP;Proxy;Role;Status;Type;Updated At
+1;ONPREM;2024-11-12T19:59:18Z;[{'config': None, 'id': 'a8240883-403d-4e71-8376-85f733f72438', 'name': 'connectors'}];INC Data Collector;Online;d1c3b966-d328-4326-b754-0e19ca62836f;INC;None;['10.21.116.1', '10.21.116.6'];INC-SRV-TAEGIS;None;;collector;None;OnPrem;2025-04-01T11:00:40Z

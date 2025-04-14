@@ -1,0 +1,2 @@
+Collector Num;Cluster Type;Created At;Deployments;Description;Health;ID;Name;DHCP;DNS;Hostnamr;NTP;Proxy;Role;Status;Type;Updated At
+1;ONPREM;2023-10-20T20:56:14Z;[{'config': None, 'id': '89e11a9e-226b-44db-8b04-987ee825718f', 'name': 'connectors'}];Collector - DTC Cirion;Online;463ec85d-d093-4770-82b3-585b7ee5aee5;NTC1046;None;['10.10.0.5', '172.16.16.5'];NTC1046;None;;collector;None;OnPrem;2025-03-07T23:13:59Z

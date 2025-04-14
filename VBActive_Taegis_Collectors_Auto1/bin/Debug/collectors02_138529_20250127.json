@@ -1,0 +1,29 @@
+{
+    "data": {
+        "getAllClusters": [
+            {
+                "clusterType": "ONPREM",
+                "createdAt": "2022-07-13T18:03:49Z",
+                "deployments": [],
+                "description": "Collector do cliente Nortec",
+                "health": "Online",
+                "id": "9a80a8cc-24f9-446c-8fef-10ed4c8671f3",
+                "name": "NORTEC",
+                "network": {
+                    "dhcp": false,
+                    "dns": [
+                        "192.168.0.253",
+                        "192.168.0.200"
+                    ],
+                    "hostname": "NTQCOLL01",
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "role": "collector",
+                "status": null,
+                "type": "OnPrem",
+                "updatedAt": "2025-01-19T16:31:45Z"
+            }
+        ]
+    }
+}

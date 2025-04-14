@@ -1,0 +1,4 @@
+Collector Num;Cluster Type;Created At;Deployments;Description;Health;ID;Name;DHCP;DNS;Hostnamr;NTP;Proxy;Role;Status;Type;Updated At
+1;ONPREM;2024-07-12T19:18:30Z;[];;Online;74f083b1-8aab-4d78-8b6a-4df64dceb8b4;DC-SOC;None;['192.168.10.1', '192.168.10.2'];DC-SOC;None;;collector;None;OnPrem;2024-11-29T21:55:15Z
+2;ONPREM;2024-03-08T17:26:57Z;[];Coletor de Manaus;Online;cd1705a3-a36f-4ffb-b14b-bf351ebaf6ba;MAO-SOC;None;['192.168.17.1', '192.168.17.2'];MAO-SOC;None;;collector;None;OnPrem;2025-01-20T19:03:50Z
+3;ONPREM;2023-04-03T12:35:31Z;[];Coletor da Barra;Online;f320810f-9d11-4ed8-97e5-2dfd15636b77;Barra;None;['192.168.99.8', '192.168.99.28'];CA-SOC;None;;collector;None;OnPrem;2025-01-21T08:09:49Z

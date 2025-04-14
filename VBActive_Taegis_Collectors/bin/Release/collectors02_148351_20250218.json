@@ -1,0 +1,35 @@
+{
+    "data": {
+        "getAllClusters": [
+            {
+                "clusterType": "ONPREM",
+                "createdAt": "2024-11-12T19:59:18Z",
+                "deployments": [
+                    {
+                        "config": null,
+                        "id": "a8240883-403d-4e71-8376-85f733f72438",
+                        "name": "connectors"
+                    }
+                ],
+                "description": "INC Data Collector",
+                "health": "Online",
+                "id": "d1c3b966-d328-4326-b754-0e19ca62836f",
+                "name": "INC",
+                "network": {
+                    "dhcp": null,
+                    "dns": [
+                        "10.21.116.1",
+                        "10.21.116.6"
+                    ],
+                    "hostname": "INC-SRV-TAEGIS",
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "role": "collector",
+                "status": null,
+                "type": "OnPrem",
+                "updatedAt": "2025-01-14T18:51:58Z"
+            }
+        ]
+    }
+}

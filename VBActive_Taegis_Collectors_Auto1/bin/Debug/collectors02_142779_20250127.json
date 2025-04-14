@@ -1,0 +1,75 @@
+{
+    "data": {
+        "getAllClusters": [
+            {
+                "clusterType": "ONPREM",
+                "createdAt": "2024-07-12T19:18:30Z",
+                "deployments": [],
+                "description": "",
+                "health": "Online",
+                "id": "74f083b1-8aab-4d78-8b6a-4df64dceb8b4",
+                "name": "DC-SOC",
+                "network": {
+                    "dhcp": null,
+                    "dns": [
+                        "192.168.10.1",
+                        "192.168.10.2"
+                    ],
+                    "hostname": "DC-SOC",
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "role": "collector",
+                "status": null,
+                "type": "OnPrem",
+                "updatedAt": "2024-11-29T21:55:15Z"
+            },
+            {
+                "clusterType": "ONPREM",
+                "createdAt": "2024-03-08T17:26:57Z",
+                "deployments": [],
+                "description": "Coletor de Manaus",
+                "health": "Online",
+                "id": "cd1705a3-a36f-4ffb-b14b-bf351ebaf6ba",
+                "name": "MAO-SOC",
+                "network": {
+                    "dhcp": null,
+                    "dns": [
+                        "192.168.17.1",
+                        "192.168.17.2"
+                    ],
+                    "hostname": "MAO-SOC",
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "role": "collector",
+                "status": null,
+                "type": "OnPrem",
+                "updatedAt": "2025-01-20T19:03:50Z"
+            },
+            {
+                "clusterType": "ONPREM",
+                "createdAt": "2023-04-03T12:35:31Z",
+                "deployments": [],
+                "description": "Coletor da Barra",
+                "health": "Online",
+                "id": "f320810f-9d11-4ed8-97e5-2dfd15636b77",
+                "name": "Barra",
+                "network": {
+                    "dhcp": null,
+                    "dns": [
+                        "192.168.99.8",
+                        "192.168.99.28"
+                    ],
+                    "hostname": "CA-SOC",
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "role": "collector",
+                "status": null,
+                "type": "OnPrem",
+                "updatedAt": "2025-01-21T08:09:49Z"
+            }
+        ]
+    }
+}

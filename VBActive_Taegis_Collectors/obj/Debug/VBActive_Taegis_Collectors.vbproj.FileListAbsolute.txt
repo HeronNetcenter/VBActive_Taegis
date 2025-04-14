@@ -1,0 +1,16 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\bin\Debug\VBActive_Taegis_Collectors.exe.config
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\bin\Debug\VBActive_Taegis_Collectors.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\bin\Debug\VBActive_Taegis_Collectors.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\bin\Debug\VBActive_Taegis_Collectors.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\bin\Debug\VBActive_Taegis_DLL.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\bin\Debug\VBActive_Taegis_DLL.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\bin\Debug\VBActive_Taegis_DLL.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive_Taegis_Collectors.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive_Taegis_Collectors.Form1.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive_Taegis_Collectors.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive_Taegis_Collectors.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive_Taegis_Collectors.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive.FCB13599.Up2Date
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive_Taegis_Collectors.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive_Taegis_Collectors.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Collectors\obj\Debug\VBActive_Taegis_Collectors.pdb

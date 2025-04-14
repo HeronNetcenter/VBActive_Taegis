@@ -1,0 +1,2 @@
+Collector Num;Cluster Type;Created At;Deployments;Description;Health;ID;Name;DHCP;DNS;Hostnamr;NTP;Proxy;Role;Status;Type;Updated At
+1;ONPREM;2022-07-13T18:03:49Z;[];Collector do cliente Nortec;Online;9a80a8cc-24f9-446c-8fef-10ed4c8671f3;NORTEC;False;['192.168.0.253', '192.168.0.200'];NTQCOLL01;None;;collector;None;OnPrem;2025-01-19T16:31:45Z

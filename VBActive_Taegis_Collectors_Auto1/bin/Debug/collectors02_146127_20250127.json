@@ -1,0 +1,29 @@
+{
+    "data": {
+        "getAllClusters": [
+            {
+                "clusterType": "ONPREM",
+                "createdAt": "2024-02-07T17:59:08Z",
+                "deployments": [],
+                "description": "",
+                "health": "Provisioning",
+                "id": "8135ba50-496b-4ccc-baa6-d2dd18d238dc",
+                "name": "LOPES",
+                "network": {
+                    "dhcp": null,
+                    "dns": [
+                        "172.18.1.6",
+                        "172.18.1.3"
+                    ],
+                    "hostname": "DataCollector",
+                    "ntp": null,
+                    "proxy": ""
+                },
+                "role": "collector",
+                "status": null,
+                "type": "OnPrem",
+                "updatedAt": "2024-02-07T17:59:10Z"
+            }
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\bin\Release\VBActive_Taegis_CommonModule.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\bin\Release\VBActive_Taegis_CommonModule.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\bin\Release\VBActive_Taegis_CommonModule.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\obj\Release\VBActive_Taegis_CommonModule.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\obj\Release\VBActive_Taegis_CommonModule.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\obj\Release\VBActive_Taegis_CommonModule.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\obj\Release\VBActive_Taegis_CommonModule.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\obj\Release\VBActive_Taegis_CommonModule.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_CommonModule\obj\Release\VBActive_Taegis_CommonModule.pdb

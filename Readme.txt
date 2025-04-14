@@ -1,13 +1,13 @@
-RepositÛrio GitHub
+Reposit√≥rio GitHub
 Data: 14/04/25
 Autor: Heron Jr
 
-Este È apenas o repositÛrio de cÛdigos para envio e hospedagem no GitHub.
-Esta pasta n„o dever· ser usada para a alteraÁ„o e compilaÁ„o dos programas aqui armazenados.
-O local correto para alteraÁ„o e compilaÁ„o dos cÛdigos È C:\_Desenv\...
+Este √© apenas o reposit√≥rio de c√≥digos para envio e hospedagem no GitHub.
+Esta pasta n√£o dever√° ser usada para a altera√ß√£o e compila√ß√£o dos programas aqui armazenados.
+O local correto para altera√ß√£o e compila√ß√£o dos c√≥digos √© no servidor NTCDW02 - C:\DWNetcenter\_Desenv\...
 
-O processo para alteraÁ„o, compilaÁ„o e armazenamento no GitHub È:
-	1. Localizar o cÛdigo sob a pasta C:\_Desenv\...
-	2. Efetuar as alteraÁıes necess·rias e os testes.
-	3. ApÛs a homologaÁ„o copiar a pasta inteira do programa sobrescrevendo o programa existente no repositÛrio D:\REPOS\_Desenv...
-	4. Usando o VS Code enviar o cÛdigo para o GitHub usando o script git quick.
+O processo para altera√ß√£o, compila√ß√£o e armazenamento no GitHub √©:
+	1. Localizar o c√≥digo sob a pasta do servidor NTCDW02 - C:\DWNetcenter\_Desenv\...
+	2. Efetuar as altera√ß√µes necess√°rias e os testes.
+	3. Ap√≥s a homologa√ß√£o copiar a pasta inteira do programa sobrescrevendo o programa existente no reposit√≥rio do servidor NTCDW02 - D:\REPOS\_Desenv...
+	4. Usando o VS Code enviar o c√≥digo para o GitHub usando o script git quick.

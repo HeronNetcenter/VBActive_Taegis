@@ -1,0 +1,66 @@
+# ASSETS - GERAÇÃO DO ARQUIVO CSV
+""" 
+AUTOR: HERON JR
+DATA:  27/01/23
+ALT:   27/01/23
+"""
+import json
+
+from datetime import datetime, timedelta
+yesterday = datetime.now() - timedelta(days=1)
+
+# Funcionando 1
+# array = '{"data":{"allAssets":{"assets":[{"endpointType":"ENDPOINT_REDCLOAK","hostId":"004b12104f2f7dbac6303a164769694e","hostnames":[{"hostname":"WKSGER001"}],"id":"dab24047-8127-4ac2-a2d5-dd0d0a74bf05","osVersion":"VERSION_WIN10","sensorId":"004b12104f2f7dbac6303a164769694e","sensorTenant":"004b1210","sensorVersion":"2.8.5.0"}],"totalResults":140}}}'
+# data  = json.loads(array)
+# fruits_list = data['data']
+# print(fruits_list) 
+
+# json_str =  """
+# {
+#     "Customer": "Jason Sweet",
+#     "Orders": [
+#         {"Id": 78912},
+#         {"Id": 88953}
+#     ]
+# }
+# """''
+
+# Funcionando 2
+# with open('teste_lista.json', 'r') as json_str:
+#     data = json.load(json_str)
+
+# customer = data['Customer']
+# order_1 = data['Orders'][0]['Id']
+# order_2 = data['Orders'][1]['Id']
+# total = len(data['Orders'])
+
+# print(f"Customer: {customer}, Orders: {order_1}, {order_2}, Total: {total}")
+
+# Arquivo de saída CSV
+arquivo = open('assets02_'  + datetime.now().strftime('%Y%m%d') + '.csv', 'w')
+arquivo.write("Asset_Num;Endpoint Type;Host ID;Host Name;ID;OS Version;Sensor ID;Sensor Tenant;Sensor Version;osFamily")    # Cabeçalho
+
+# Arquivo de leitura
+with open('assets02_'  + datetime.now().strftime('%Y%m%d') + '.json', 'r') as json_str:
+    data = json.load(json_str)
+    
+i = 0
+total = len(data['data']['allAssets']['assets'])
+
+while i <= (total - 1):
+    ddata1 = data['data']['allAssets']['assets'][i]['endpointType']
+    ddata2 = data['data']['allAssets']['assets'][i]['hostId']
+    ddata3 = data['data']['allAssets']['assets'][i]['hostnames'][0]['hostname']
+    ddata4 = data['data']['allAssets']['assets'][i]['id']
+    ddata5 = data['data']['allAssets']['assets'][i]['osVersion']
+    ddata6 = data['data']['allAssets']['assets'][i]['sensorId']
+    ddata7 = data['data']['allAssets']['assets'][i]['sensorTenant']
+    ddata8 = data['data']['allAssets']['assets'][i]['sensorVersion']
+    ddata9 = data['data']['allAssets']['assets'][i]['osFamily']
+    i += 1
+    print(f"Asset_Num: {i}, \nEndpoint Type: {ddata1}, \nHost ID: {ddata2}, \nHost Name: {ddata3}, \nID: {ddata4}, \nOS Version: {ddata5}, \nSensor ID: {ddata6}, \nSensor Tenant: {ddata7}, \nSensor Version: {ddata8}, \nOS Family: {ddata9}, \n=====================================================")
+    # Gravando o arquivo CSV
+    arquivo.write(f"\n{i};{ddata1};{ddata2};{ddata3};{ddata4};{ddata5};{ddata6};{ddata7};{ddata8};{ddata9}")    # Linha
+
+print(f"\nTotal: {total}")
+arquivo.close()

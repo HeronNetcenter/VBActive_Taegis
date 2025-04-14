@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+VBActive_Taegis_Assets_Auto1
+</name>
+</assembly>
+<members>
+<member name="T:VBActive_Taegis_Assets_Auto1.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:VBActive_Taegis_Assets_Auto1.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:VBActive_Taegis_Assets_Auto1.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:VBActive_Taegis_Assets_Auto1.Modulo_Active_Taegis_Assets_Auto1">
+ <summary>
+ Processa o promeiro passo da extração de Assets da Taegis para a geração do arquivo assets01_TenantId_yyyymmdd.json - VS2022
+ Autor: Heron Domingues Jr
+ Data:  16/03/23
+ Alteração Data: 17/04/23-07/03/24-21/03/24
+ 06/07/23: Inclusão de campos na tabela t_taegis_assets para a emissão do book do NOC
+ Obs: Nas propriedades do projeto desmarcar a opção "enable application framework" e mudar a caixa "Startup Object" para a Sub Main deste módulo
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:VBActive_Taegis_Assets_Auto1.Proj.VersaoAuto">
+ <summary>
+ Retorna a versão automática da aplicação
+ </summary>
+ <returns></returns>
+</member>
+</members>
+</doc>

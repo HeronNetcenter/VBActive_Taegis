@@ -1,0 +1,16 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\bin\Release\VBActive_Taegis_Assets.exe.config
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\bin\Release\VBActive_Taegis_Assets.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\bin\Release\VBActive_Taegis_Assets.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\bin\Release\VBActive_Taegis_Assets.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\bin\Release\VBActive_Taegis_DLL.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\bin\Release\VBActive_Taegis_DLL.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\bin\Release\VBActive_Taegis_DLL.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive_Taegis_Assets.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive_Taegis_Assets.Form1.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive_Taegis_Assets.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive_Taegis_Assets.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive_Taegis_Assets.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive.4BA1922E.Up2Date
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive_Taegis_Assets.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive_Taegis_Assets.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Assets\obj\Release\VBActive_Taegis_Assets.pdb

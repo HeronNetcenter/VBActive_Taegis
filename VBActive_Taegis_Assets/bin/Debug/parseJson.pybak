@@ -1,0 +1,16 @@
+# ASSETS - PARSE DA SAÍDA assets01_aaaammdd.json PARA UM FORMATO JSON DENTRO DO PADRÃO CORRETO
+""" 
+AUTOR: HERON JR
+DATA:  27/01/23
+ALT:   27/01/23
+"""
+import json
+from datetime import datetime, timedelta
+# yesterday = datetime.now() - timedelta(days=1)
+
+with open('assets01_'  + datetime.now().strftime('%Y%m%d') + '.json', 'r') as fcc_file:
+    fcc_data = json.load(fcc_file)
+    print(json.dumps(fcc_data, indent=4, sort_keys=True))
+    arquivo = open('assets02_'  + datetime.now().strftime('%Y%m%d') + '.json', 'w')
+    arquivo.write(json.dumps(fcc_data, indent=4, sort_keys=True))
+    arquivo.close()

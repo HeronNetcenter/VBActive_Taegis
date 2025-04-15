@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+VBActive_IT2M_Chamados_Json
+</name>
+</assembly>
+<members>
+<member name="T:VBActive_IT2M_Chamados_Json.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:VBActive_IT2M_Chamados_Json.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:VBActive_IT2M_Chamados_Json.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:VBActive_IT2M_Chamados_Json.Proj.VersaoAuto">
+ <summary>
+ Retorna a versão automática da aplicação
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:VBActive_IT2M_Chamados_Json.Proj.ConnectionString">
+ <summary>
+ Conexão banco DWNetcenter
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:VBActive_IT2M_Chamados_Json.Proj.mascaraCNPJ_CPF(System.String)">
+ <summary>
+ Máscara para CNPJ e CPF
+ </summary>
+ <param name="doc"></param>
+ <returns></returns>
+</member>
+</members>
+</doc>

@@ -1,0 +1,12 @@
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\bin\Release\VBActive_IT2M_Chamados_Json.exe.config
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\bin\Release\VBActive_IT2M_Chamados_Json.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\bin\Release\VBActive_IT2M_Chamados_Json.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\bin\Release\VBActive_IT2M_Chamados_Json.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\obj\Release\VBActive_IT2M_Chamados_Json.vbproj.AssemblyReference.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\obj\Release\VBActive_IT2M_Chamados_Json.Form1.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\obj\Release\VBActive_IT2M_Chamados_Json.Resources.resources
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\obj\Release\VBActive_IT2M_Chamados_Json.vbproj.GenerateResource.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\obj\Release\VBActive_IT2M_Chamados_Json.vbproj.CoreCompileInputs.cache
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\obj\Release\VBActive_IT2M_Chamados_Json.exe
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\obj\Release\VBActive_IT2M_Chamados_Json.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_IT2M_Chamados_Json\obj\Release\VBActive_IT2M_Chamados_Json.pdb

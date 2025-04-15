@@ -1,2 +1,0 @@
-Collector Num;Cluster Type;Created At;Deployments;Description;Health;ID;Name;DHCP;DNS;Hostnamr;NTP;Proxy;Role;Status;Type;Updated At
-1;ONPREM;2024-02-07T17:59:08Z;[];;Provisioning;8135ba50-496b-4ccc-baa6-d2dd18d238dc;LOPES;None;['172.18.1.6', '172.18.1.3'];DataCollector;None;;collector;None;OnPrem;2024-02-07T17:59:10Z

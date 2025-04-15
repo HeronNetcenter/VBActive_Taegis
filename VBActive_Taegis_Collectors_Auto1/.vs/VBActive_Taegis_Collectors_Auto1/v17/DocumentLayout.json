@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Collectors_Auto1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E565D807-359F-48EA-85EE-8A907DE1E9B0}|VBActive_Taegis_Collectors_Auto1.vbproj|c:\\dwnetcenter\\_desenv\\vb\\vbactive_taegis_collectors_auto1\\modulo_active_taegis_collectors_auto1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{E565D807-359F-48EA-85EE-8A907DE1E9B0}|VBActive_Taegis_Collectors_Auto1.vbproj|solutionrelative:modulo_active_taegis_collectors_auto1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Modulo_Active_Taegis_Collectors_Auto1.vb",
+              "DocumentMoniker": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Collectors_Auto1\\Modulo_Active_Taegis_Collectors_Auto1.vb",
+              "RelativeDocumentMoniker": "Modulo_Active_Taegis_Collectors_Auto1.vb",
+              "ToolTip": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Collectors_Auto1\\Modulo_Active_Taegis_Collectors_Auto1.vb",
+              "RelativeToolTip": "Modulo_Active_Taegis_Collectors_Auto1.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-07T19:02:51.481Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

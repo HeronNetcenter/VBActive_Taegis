@@ -1,2 +1,5 @@
 **/bin/**/*.json
 **/bin/**/*.csv
+
+# Arquivo de sicronia da App FreeFileSync
+sync.ffs_db

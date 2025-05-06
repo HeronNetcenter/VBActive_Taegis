@@ -36,7 +36,7 @@ Public Class Form1
         cboClientes.SelectedIndex = _intClientIndex
 
         _strPastaPython = LeConfigPasta("pasta_python")
-        _strPastaProj = LeConfigPasta("pasta_proj_datasources").Replace("\Debug", "\Release")
+        _strPastaProj = LeConfigPasta("pasta_proj_datasources") '.Replace("\Release", "\Debug") 'Troca de pasta para testes no modo Debug
         txtPastaPython.Text = _strPastaPython
         txtPastaProj.Text = _strPastaProj
         _datExtracao1 = DateAdd(DateInterval.Day, -1, dtpDataExtracao.Value.Date)

@@ -49,3 +49,4 @@ C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Alerts\bin\Debug\System.Numerics.Vecto
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Alerts\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Alerts\bin\Debug\Newtonsoft.Json.dll
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Alerts\bin\Debug\Newtonsoft.Json.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Alerts\obj\Debug\VBActive_Taegis_Alerts.exe.config

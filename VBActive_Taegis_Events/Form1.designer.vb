@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btnEvents = New System.Windows.Forms.Button()
         Me.txtPastaPython = New System.Windows.Forms.TextBox()
@@ -51,6 +52,7 @@ Partial Class Form1
         Me.btnEventsMesAnt = New System.Windows.Forms.Button()
         Me.btnSQLDiario = New System.Windows.Forms.Button()
         Me.btnEventsPeriodo = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -65,6 +67,7 @@ Partial Class Form1
         Me.btnEvents.Size = New System.Drawing.Size(115, 41)
         Me.btnEvents.TabIndex = 0
         Me.btnEvents.Text = "Conta Eventos Diários"
+        Me.ToolTip1.SetToolTip(Me.btnEvents, "Conta os eventos do dia da data selecionada")
         Me.btnEvents.UseVisualStyleBackColor = True
         '
         'txtPastaPython
@@ -196,6 +199,7 @@ Partial Class Form1
         Me.btnSQL.Size = New System.Drawing.Size(115, 23)
         Me.btnSQL.TabIndex = 11
         Me.btnSQL.Text = "SQL"
+        Me.ToolTip1.SetToolTip(Me.btnSQL, "Atualiza a tabela de eventos no SQL Server")
         Me.btnSQL.UseVisualStyleBackColor = True
         '
         'PictureBox1
@@ -287,6 +291,7 @@ Partial Class Form1
         Me.btnSQLDiario.Size = New System.Drawing.Size(115, 23)
         Me.btnSQLDiario.TabIndex = 19
         Me.btnSQLDiario.Text = "SQL"
+        Me.ToolTip1.SetToolTip(Me.btnSQLDiario, "Atualiza a tabela de eventos no SQL Server")
         Me.btnSQLDiario.UseVisualStyleBackColor = True
         '
         'btnEventsPeriodo
@@ -298,6 +303,7 @@ Partial Class Form1
         Me.btnEventsPeriodo.Size = New System.Drawing.Size(115, 41)
         Me.btnEventsPeriodo.TabIndex = 20
         Me.btnEventsPeriodo.Text = "Conta Eventos Diários/Período"
+        Me.ToolTip1.SetToolTip(Me.btnEventsPeriodo, "Conta os eventos do mês/ano da data selecionada")
         Me.btnEventsPeriodo.UseVisualStyleBackColor = True
         '
         'Form1
@@ -366,4 +372,5 @@ Partial Class Form1
     Friend WithEvents btnEventsMesAnt As Button
     Friend WithEvents btnSQLDiario As Button
     Friend WithEvents btnEventsPeriodo As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

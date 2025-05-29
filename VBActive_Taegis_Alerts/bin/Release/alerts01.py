@@ -6,6 +6,7 @@ ALT:   26/01/23-03/04/23
        27/12/24: INCLUSÃO DO CAMPO FIRST_RESOLVED_AT
        13/03/25: AMPLIAÇÃO DO PERÍODO DE COLETA - SUBSTITUI "yesterday" POR UM PERÍODO ANTERIOR DE 3 MESES first_day_3_months_ago
        16/03/25: CONTINUAM OS TESTES COM CHATGPT-IA PARA PERÍODOS MENORES DO QUE 3 MESES
+       27/05/25: INCLUÍDO NA QUERY O CAMPO "first_investigated_at"
 US2: https://api.delta.taegis.secureworks.com
 client_name	tenant_id	  client_id	                        client_secret
 NETCENTER   137287	    SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg	ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx
@@ -37,7 +38,7 @@ TENANT_ID = args.pTenantId
 CLIENT_ID = args.pClientId
 CLIENT_SECRET = args.pClientSecret
 
- # ==========================================================================================
+# ==========================================================================================
 # PARA TESTES - COMENTAR ACIMA DESDE import argparse ATÉ CLIENTE_SECRET = args.pClientSecret
 # E TIRAR COMENTÁRIOS DO CLIENTE ESCOLHIDO NAS LINHAS ABAIXO:
 # ==========================================================================================
@@ -135,6 +136,9 @@ query ($searchRequestInput: SearchRequestInput)
           description
           confidence
           severity
+          first_investigated_at {
+            seconds
+          }
           first_resolved_at {
             seconds
           }
@@ -154,22 +158,6 @@ query ($searchRequestInput: SearchRequestInput)
 """
 
 auth = "Bearer " + token['access_token']
-
-# Parâmetros originais
-# params = {
-#     "searchRequestInput": {
-#         "cql_query": "from alert severity >= 0.7 and status='OPEN' EARLIEST='2022-05-02T16:09:11.012Z' AND LATEST='2022-05-03T16:09:11.012Z'",
-#         "limit": 1
-#     }
-# }
-
-# Parâmetros Fixos
-# params = {
-#     "searchRequestInput": {
-#         "cql_query": "EARLIEST='2023-01-24T00:00:00.000Z' AND LATEST='2023-01-25T00:00:00.000Z'",
-#         "limit": 10000
-#     }
-# }
 
 # # Parâmetros para o dia anterior (24 horas)
 # Get current date

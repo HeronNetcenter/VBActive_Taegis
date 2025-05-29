@@ -28,7 +28,10 @@ VBActive_Taegis_Alerts_Auto1
  Autor: Heron Domingues Jr
  Data:  14/03/23
  Alteração Data: 04/04/23-07/03/24-21/03/24
+ 29/11/23: Criação da tabela t_taegis_alerts_tt para tratamento de Táticas e Técnicas
+ 12/12/23: Criação da função OcorrenciasTacticsAnt para tratar o campo tactics_technique_id
  27/12/24: Inclusão do campo metadata_resolved_at
+ 28/05/25: Inclusão do campo metadata_first_investigated_at
  Obs: Nas propriedades do projeto desmarcar a opção "enable application framework" e mudar a caixa "Startup Object" para a Sub Main deste módulo
  </summary>
  <remarks></remarks>

@@ -244,7 +244,8 @@ Public Class Form1
         '27/12/24
         '13/03/25: AMPLIAÇÃO DO PERÍODO DE COLETA - SUBSTITUI "yesterday" POR UM PERÍODO ANTERIOR DE 3 MESES first_day_3_months_ago
         '17/03/25: AUTOMATIZAÇÃO DO PROCESSO QUINZENAL
-        '======================================================================================
+        '27/03/25: INCLUSÃO DO CAMPO metadata_first_investigated_at NA TABELA SQL t_taegis_alerts
+        '==========================================================================================================================
         '01 - attack_technique
         '02 - entities
         '03 - ent_relationships
@@ -265,6 +266,8 @@ Public Class Form1
         '18 - suppressed_rules
         '19 - tactics_technique
         '20 - metadata_first_resolved_at
+        '21 - metadata_first_investigated_at
+
         Cursor = Cursors.WaitCursor
         'Dim strData As New String(_datExtracao1.ToString("yyyyMMdd"))
         'Dim strSaida As New String("\alerts02_" & _aTenantId(_intClientIndex) & "_" & _datExtracao1.ToString("yyyyMMdd") & ".csv")
@@ -348,7 +351,8 @@ Public Class Form1
         '13/02/23-14/02/23-21/03/23-29/03/23-11/12/23
         '27/12/24
         '13/03/25
-        '===========================================
+        '27/05/25 - Inclusão do campo metadata_first_investigated_at na tabela SQL t_taegis_alerts
+        '=========================================================================================
         Application.DoEvents()
         Dim oCon As New SqlConnection(ConnectionString)
         Dim oCmd As New SqlCommand
@@ -359,62 +363,64 @@ Public Class Form1
         'Try
 
         With oCmd
-                .Connection = oCon
-                .CommandType = CommandType.Text
-                .CommandText = "insert into t_taegis_alerts(" &
-                    "alert_date, " &
-                    "alert_num, " &
-                    "alert_tenant_id," &
-                    "alert_client," &
-                    "attack_technique_ids, " &
-                    "entities, " &
-                    "ent_relationships, " &
-                    "id, " &
-                    "investigation_ids, " &
-                    "metadata_confidence, " &
-                    "metadata_created_at, " &
-                    "metadata_creator_detector_id, " &
-                    "metadata_creator_detector_version, " &
-                    "metadata_creator_rule_id, " &
-                    "metadata_creator_rule_version, " &
-                    "metadata_engine_name, " &
-                    "metadata_severity, " &
-                    "metadata_title, " &
-                    "sensor_types, " &
-                    "status, " &
-                    "suppressed, " &
-                    "suppressed_rules, " &
-                    "tactics_technique_id, " &
-                    "metadata_first_resolved_at) " &
-                    "values('" & Proj.UnixTimestampToDate(fields(7)).ToString("yyyyMMdd") & "', " &
-                    fields(0) & ", '" &
-                    _aTenantId(_intClientIndex) & "', '" &
-                    cboClientes.Text & "', '" &
-                    fields(1).Replace("'", "|") & "', '" &
-                    fields(2).Replace("'", "|") & "', '" &
-                    fields(3).Replace("'", "|") & "', '" &
-                    fields(4).Replace("'", "|") & "', '" &
-                    fields(5).Replace("'", "|") & "', '" &
-                    fields(6).Replace("'", "|") & "', '" &
-                    fields(7).Replace("'", "|") & "', '" &
-                    fields(8).Replace("'", "|") & "', '" &
-                    fields(9).Replace("'", "|") & "', '" &
-                    fields(10).Replace("'", "|") & "', '" &
-                    fields(11).Replace("'", "|") & "', '" &
-                    fields(12).Replace("'", "|") & "', '" &
-                    fields(13).Replace("'", "|") & "', '" &
-                    fields(14).Replace("'", "|") & "', '" &
-                    fields(15).Replace("'", "|") & "', '" &
-                    fields(16).Replace("'", "|") & "', '" &
-                    fields(17).Replace("'", "|") & "', '" &
-                    fields(18).Replace("'", "|") & "', '" &
-                    fields(19).Replace("'", "|") & "', '" &
-                    fields(20).Replace("'", quote) & "')"
-                .CommandTimeout = 3600
-                .ExecuteNonQuery()
-            End With
+            .Connection = oCon
+            .CommandType = CommandType.Text
+            .CommandText = "insert into t_taegis_alerts(" &
+                        "alert_date, " &
+                        "alert_num, " &
+                        "alert_tenant_id," &
+                        "alert_client," &
+                        "attack_technique_ids, " &
+                        "entities, " &
+                        "ent_relationships, " &
+                        "id, " &
+                        "investigation_ids, " &
+                        "metadata_confidence, " &
+                        "metadata_created_at, " &
+                        "metadata_creator_detector_id, " &
+                        "metadata_creator_detector_version, " &
+                        "metadata_creator_rule_id, " &
+                        "metadata_creator_rule_version, " &
+                        "metadata_engine_name, " &
+                        "metadata_severity, " &
+                        "metadata_title, " &
+                        "sensor_types, " &
+                        "status, " &
+                        "suppressed, " &
+                        "suppressed_rules, " &
+                        "tactics_technique_id, " &
+                        "metadata_first_resolved_at, " &
+                        "metadata_first_investigated_at) " &
+                        "values('" & Proj.UnixTimestampToDate(fields(7)).ToString("yyyyMMdd") & "', " &
+                        fields(0) & ", '" &
+                        _aTenantId(_intClientIndex) & "', '" &
+                        cboClientes.Text & "', '" &
+                        fields(1).Replace("'", "|") & "', '" &
+                        fields(2).Replace("'", "|") & "', '" &
+                        fields(3).Replace("'", "|") & "', '" &
+                        fields(4).Replace("'", "|") & "', '" &
+                        fields(5).Replace("'", "|") & "', '" &
+                        fields(6).Replace("'", "|") & "', '" &
+                        fields(7).Replace("'", "|") & "', '" &
+                        fields(8).Replace("'", "|") & "', '" &
+                        fields(9).Replace("'", "|") & "', '" &
+                        fields(10).Replace("'", "|") & "', '" &
+                        fields(11).Replace("'", "|") & "', '" &
+                        fields(12).Replace("'", "|") & "', '" &
+                        fields(13).Replace("'", "|") & "', '" &
+                        fields(14).Replace("'", "|") & "', '" &
+                        fields(15).Replace("'", "|") & "', '" &
+                        fields(16).Replace("'", "|") & "', '" &
+                        fields(17).Replace("'", "|") & "', '" &
+                        fields(18).Replace("'", "|") & "', '" &
+                        fields(19).Replace("'", "|") & "', '" &
+                        fields(20).Replace("'", "|") & "', '" &
+                        fields(21).Replace("'", quote) & "')"
+            .CommandTimeout = 3600
+            .ExecuteNonQuery()
+        End With
 
-            oCon.Close()
+        oCon.Close()
 
         'Catch ex As SqlException
         '    txtMensagens.Text &= vbCrLf & "Erro SQL: " & ex.ToString
@@ -433,7 +439,8 @@ Public Class Form1
         '13/02/23-14/02/23-27/02/23-11/12/23
         '27/12/24
         '13/03/25
-        '===========================================
+        '27/05/25 - Inclusão do campo metadata_first_investigated_at na tabela SQL t_taegis_alerts
+        '=========================================================================================
         Application.DoEvents()
         Dim oCon As New SqlConnection(ConnectionString)
         Dim oCmd As New SqlCommand
@@ -444,38 +451,39 @@ Public Class Form1
         'Try
 
         With oCmd
-                .Connection = oCon
-                .CommandType = CommandType.Text
-                .CommandText = "update t_taegis_alerts " &
-                "set alert_date = '" & strAlertDate & "', " &
-                "attack_technique_ids = '" & fields(1).Replace("'", "|") & "', " &
-                "tactics_technique_id = '" & fields(19).Replace("'", quote) & "', " &
-                "entities = '" & fields(2).Replace("'", "|") & "', " &
-                "ent_relationships = '" & fields(3).Replace("'", "|") & "', " &
-                "id = '" & fields(4).Replace("'", "|") & "', " &
-                "investigation_ids = '" & fields(5).Replace("'", "|") & "', " &
-                "metadata_confidence = '" & fields(6).Replace("'", "|") & "', " &
-                "metadata_first_resolved_at = '" & fields(20).Replace("'", "|") & "', " &
-                "metadata_created_at = '" & fields(7).Replace("'", "|") & "', " &
-                "metadata_creator_detector_id = '" & fields(8).Replace("'", "|") & "', " &
-                "metadata_creator_detector_version = '" & fields(9).Replace("'", "|") & "', " &
-                "metadata_creator_rule_id = '" & fields(10).Replace("'", "|") & "', " &
-                "metadata_creator_rule_version = '" & fields(11).Replace("'", "|") & "', " &
-                "metadata_engine_name = '" & fields(12).Replace("'", "|") & "', " &
-                "metadata_severity = '" & fields(13).Replace("'", "|") & "', " &
-                "metadata_title = '" & fields(14).Replace("'", "|") & "', " &
-                "sensor_types = '" & fields(15).Replace("'", "|") & "', " &
-                "status = '" & fields(16).Replace("'", "|") & "', " &
-                "suppressed = '" & fields(17).Replace("'", "|") & "', " &
-                "suppressed_rules = '" & fields(18).Replace("'", "|") & "', " &
-                "alt_data = getdate(), " &
-                "alt_user = suser_name() " &
-                "where id = '" & fields(4) & "'"
-                .ExecuteNonQuery()
-                .CommandTimeout = 3600
-            End With
+            .Connection = oCon
+            .CommandType = CommandType.Text
+            .CommandText = "update t_taegis_alerts " &
+                    "set alert_date = '" & strAlertDate & "', " &
+                    "attack_technique_ids = '" & fields(1).Replace("'", "|") & "', " &
+                    "tactics_technique_id = '" & fields(19).Replace("'", quote) & "', " &
+                    "entities = '" & fields(2).Replace("'", "|") & "', " &
+                    "ent_relationships = '" & fields(3).Replace("'", "|") & "', " &
+                    "id = '" & fields(4).Replace("'", "|") & "', " &
+                    "investigation_ids = '" & fields(5).Replace("'", "|") & "', " &
+                    "metadata_confidence = '" & fields(6).Replace("'", "|") & "', " &
+                    "metadata_first_resolved_at = '" & fields(20).Replace("'", "|") & "', " &
+                    "metadata_first_investigated_at = '" & fields(21).Replace("'", "|") & "', " &
+                    "metadata_created_at = '" & fields(7).Replace("'", "|") & "', " &
+                    "metadata_creator_detector_id = '" & fields(8).Replace("'", "|") & "', " &
+                    "metadata_creator_detector_version = '" & fields(9).Replace("'", "|") & "', " &
+                    "metadata_creator_rule_id = '" & fields(10).Replace("'", "|") & "', " &
+                    "metadata_creator_rule_version = '" & fields(11).Replace("'", "|") & "', " &
+                    "metadata_engine_name = '" & fields(12).Replace("'", "|") & "', " &
+                    "metadata_severity = '" & fields(13).Replace("'", "|") & "', " &
+                    "metadata_title = '" & fields(14).Replace("'", "|") & "', " &
+                    "sensor_types = '" & fields(15).Replace("'", "|") & "', " &
+                    "status = '" & fields(16).Replace("'", "|") & "', " &
+                    "suppressed = '" & fields(17).Replace("'", "|") & "', " &
+                    "suppressed_rules = '" & fields(18).Replace("'", "|") & "', " &
+                    "alt_data = getdate(), " &
+                    "alt_user = suser_name() " &
+                    "where id = '" & fields(4) & "'"
+            .ExecuteNonQuery()
+            .CommandTimeout = 3600
+        End With
 
-            oCon.Close()
+        oCon.Close()
 
         'Catch ex As SqlException
         '    txtMensagens.Text &= vbCrLf & "Erro SQL => Linha " & fields(0) & ": " & ex.ToString

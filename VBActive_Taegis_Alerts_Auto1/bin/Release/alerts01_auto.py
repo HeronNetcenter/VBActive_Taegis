@@ -1,9 +1,13 @@
 # ALERTS - RECUPERA OS ALERTAS DE UM CLIENTE DO DIA ANTERIOR
+# =======================================================
+# ESTE PROGRAMA DEVE SER SOMENTE USADO NO MODO AUTOMÁTICO
+# =======================================================
 """ 
 AUTOR: HERON JR
 DATA:  24/01/23
 ALT:   26/01/23-03/04/23
-       27/12/24: INCLUSÃO DO CAMPO FIRST_RESOLVED_AT
+       27/12/24: INCLUS�O DO CAMPO FIRST_RESOLVED_AT
+       28/05/25: INCLUSÃO DO CAMPO FIRST_INVESTIGATED_AT
 US2: https://api.delta.taegis.secureworks.com
 client_name	tenant_id	  client_id	                        client_secret
 NETCENTER   137287	    SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg	ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx
@@ -17,10 +21,10 @@ from requests_oauthlib import OAuth2Session
 import json
 import os
 
-# DEFINIÇÃO DOS PARÂMETROS EXTERNOS
+# DEFINI��O DOS PAR�METROS EXTERNOS
 # pClientName: Nome do cliente
 # pTenantId: Tenant ID do cliente
-# O processo será automatizado pelo programa VB.Net de chamada que calculará a data do dia seguinte a partir da data informada como parâmetro.
+# O processo ser� automatizado pelo programa VB.Net de chamada que calcular� a data do dia seguinte a partir da data informada como par�metro.
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('pTenantId')
@@ -93,6 +97,9 @@ query ($searchRequestInput: SearchRequestInput)
           description
           confidence
           severity
+          first_investigated_at {
+            seconds
+          }
           first_resolved_at {
             seconds
           }
@@ -113,23 +120,7 @@ query ($searchRequestInput: SearchRequestInput)
 
 auth = "Bearer " + token['access_token']
 
-# Parâmetros originais
-# params = {
-#     "searchRequestInput": {
-#         "cql_query": "from alert severity >= 0.7 and status='OPEN' EARLIEST='2022-05-02T16:09:11.012Z' AND LATEST='2022-05-03T16:09:11.012Z'",
-#         "limit": 1
-#     }
-# }
-
-# Parâmetros Fixos
-# params = {
-#     "searchRequestInput": {
-#         "cql_query": "EARLIEST='2023-01-24T00:00:00.000Z' AND LATEST='2023-01-25T00:00:00.000Z'",
-#         "limit": 10000
-#     }
-# }
-
-# Parâmetros para o dia anterior (24 horas)
+# Par�metros para o dia anterior (24 horas)
 from datetime import datetime, timedelta
 yesterday = datetime.now() - timedelta(days=1)
 

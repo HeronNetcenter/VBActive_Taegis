@@ -646,9 +646,11 @@ Public Class Form1
 
     Private Sub btnEventsPeriodo_Click(sender As Object, e As EventArgs) Handles btnEventsPeriodo.Click
         'Botão para retornar os eventos diários de um período
-        '10/01/25
+        '10/01/25-12/05/25
         '====================================================
         Dim selectedDate As DateTime = dtpDataExtracao.Value
+        Dim strMsg As String = ""
+        Dim strTit As String = "Seleção de Data para Events"
 
         ' Calculate the first day of the current month
         Dim firstDayOfMonth As DateTime = New DateTime(selectedDate.Year, selectedDate.Month, 1)
@@ -657,15 +659,32 @@ Public Class Form1
         ' Calculate the last day of the current month
         Dim lastDayOfMonth As DateTime = firstDayOfMonth.AddMonths(1).AddDays(-1)
 
-        While currentDate <= lastDayOfMonth
-            _datExtracao = currentDate
-            btnEvents.PerformClick()
-            btnSQLDiario.PerformClick()
-            currentDate = currentDate.AddDays(1)
-        End While
+        strMsg = "Confirma o período de eventos diários de " & firstDayOfMonth.ToString("dd/MM/yyyy") & " a " &
+                 lastDayOfMonth.ToString("dd/MM/yyyy") & vbCrLf
+        If MessageBox.Show(strMsg, strTit, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            txtMensagens.AppendText("Início da geração de eventos diários do período " & firstDayOfMonth & " a " & lastDayOfMonth & vbCrLf)
+            txtMensagens.AppendText("===================================================================================" & vbCrLf)
+            Cursor = Cursors.WaitCursor
+            Application.DoEvents()
 
-        txtMensagens.Text &= vbCrLf & "===================================================================================" & vbCrLf
-        txtMensagens.Text &= "Fim da geração de eventos diários do período " & firstDayOfMonth & " a " & lastDayOfMonth & vbCrLf
+            ' Loop through each day of the month
+            While currentDate <= lastDayOfMonth
+                txtMensagens.AppendText("Geração de eventos diários do dia " & currentDate.ToString("dd/MM/yyyy") & vbCrLf)
+                txtMensagens.SelectionStart = txtMensagens.Text.Length
+                txtMensagens.ScrollToCaret()
+                _datExtracao = currentDate
+                btnEvents.PerformClick()
+                Application.DoEvents()
+                btnSQLDiario.PerformClick()
+                Application.DoEvents()
+                currentDate = currentDate.AddDays(1)
+            End While
+
+            txtMensagens.AppendText("Fim da geração de eventos diários do período " & firstDayOfMonth & " a " & lastDayOfMonth & vbCrLf)
+            txtMensagens.SelectionStart = txtMensagens.Text.Length
+            txtMensagens.ScrollToCaret()
+            Cursor = Cursors.Default
+        End If
 
     End Sub
 

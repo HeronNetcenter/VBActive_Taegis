@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{46ACF6C0-7F13-43B1-87C3-439A54AAA458}|VBActive_Taegis_Investigations_Auto1.vbproj|solutionrelative:modulo_active_taegis_investigations_auto1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46ACF6C0-7F13-43B1-87C3-439A54AAA458}|VBActive_Taegis_Investigations_Auto1.vbproj|c:\\dwnetcenter\\_desenv\\vb\\vbactive_taegis_investigations_auto1\\proj.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{46ACF6C0-7F13-43B1-87C3-439A54AAA458}|VBActive_Taegis_Investigations_Auto1.vbproj|C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations_Auto1\\proj.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{46ACF6C0-7F13-43B1-87C3-439A54AAA458}|VBActive_Taegis_Investigations_Auto1.vbproj|solutionrelative:proj.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +30,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Modulo_Active_Taegis_Investigations_Auto1.vb",
+              "DocumentMoniker": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations_Auto1\\Modulo_Active_Taegis_Investigations_Auto1.vb",
+              "RelativeDocumentMoniker": "Modulo_Active_Taegis_Investigations_Auto1.vb",
+              "ToolTip": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations_Auto1\\Modulo_Active_Taegis_Investigations_Auto1.vb",
+              "RelativeToolTip": "Modulo_Active_Taegis_Investigations_Auto1.vb",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAwwA4AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-19T18:34:38.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Proj.vb",
               "DocumentMoniker": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations_Auto1\\Proj.vb",
@@ -38,21 +51,7 @@
               "RelativeToolTip": "Proj.vb",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwBcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-03-25T14:02:46.441Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Modulo_Active_Taegis_Investigations_Auto1.vb",
-              "DocumentMoniker": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations_Auto1\\Modulo_Active_Taegis_Investigations_Auto1.vb",
-              "RelativeDocumentMoniker": "Modulo_Active_Taegis_Investigations_Auto1.vb",
-              "ToolTip": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_Investigations_Auto1\\Modulo_Active_Taegis_Investigations_Auto1.vb",
-              "RelativeToolTip": "Modulo_Active_Taegis_Investigations_Auto1.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-19T18:34:38.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T14:02:46.441Z"
             }
           ]
         }

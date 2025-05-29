@@ -29,7 +29,8 @@ VBActive_Taegis_Investigations_Auto1
  Autor: Heron Domingues Jr
  Data:  17/03/23
  Alteração Data: 18/04/23
- 19/03/24-21/03/24
+                 19/03/24-21/03/24
+                 25/03/25
  Obs: Nas propriedades do projeto desmarcar a opção "enable application framework" e mudar a caixa "Startup Object" para a Sub Main deste módulo
  </summary>
  <remarks></remarks>

@@ -6,6 +6,7 @@ ALT:   13/02/23-08/12/23
        27/12/24: INCLUSÃO DO CAMPO FIRST_RESOLVED_AT
        13/03/25: AMPLIAÇÃO DO PERÍODO DE COLETA - SUBSTITUI "yesterday" POR UM PERÍODO ANTERIOR DE 3 MESES first_day_last_month
        16/03/25: CONTINUAM OS TESTES COM CHATGPT-IA PARA PERÍODOS MENORES DO QUE 3 MESES
+       27/05/25: INCLUÍDO O CAMPO "first_investigated_at" (ddata21)
 US2: https://api.delta.taegis.secureworks.com
 
 client_name	tenant_id	client_id	                        client_secret
@@ -48,7 +49,7 @@ arquivo = open('alerts02_' + args.pTenantId + '_' + first_day_last_month.strftim
 
 # Cabeçalho
 #                   1           2                 3           4           5           6               7                   8                   9                                    10                         11                              12                    13                  14                 15          16        17        18              19        20         21 
-arquivo.write("Alert_Num;Attack Technique Ids;Entities;Ent-Relationships;ID;Investigation Ids;Metadata-Confidence;Metadata-Created At;Metadata-Creator Detector Id;Metadata-Creator Detector Version;Metadata-Creator Rule Id;Metadata-Creator Rule Version;Metadata-Engine Name;Metadata-Severity;Metadata-Title;Sensor Types;Status;Suppressed;Suppressed Rules;Tactics;Metadata-First Resolved At")    
+arquivo.write("Alert_Num;Attack Technique Ids;Entities;Ent-Relationships;ID;Investigation Ids;Metadata-Confidence;Metadata-Created At;Metadata-Creator Detector Id;Metadata-Creator Detector Version;Metadata-Creator Rule Id;Metadata-Creator Rule Version;Metadata-Engine Name;Metadata-Severity;Metadata-Title;Sensor Types;Status;Suppressed;Suppressed Rules;Tactics;Metadata-First Resolved At;Metadata-First Investigated At")    
 
 # Arquivo de leitura
 with open('alerts01_' + args.pTenantId + '_' + first_day_last_month.strftime('%Y%m%d') + '.json', 'r') as json_str:
@@ -74,6 +75,14 @@ while i <= (total - 1):
             ddata20 = 0
     except (KeyError, TypeError, IndexError):
         ddata20 = 0
+
+    # Campo first_investigated_at incluído em 27/05/25
+    try:
+        ddata21 = data['data']['alertsServiceSearch']['alerts']['list'][i]['metadata']['first_investigated_at']['seconds']  # COL 22
+        if ddata21 is None:
+            ddata21 = 0
+    except (KeyError, TypeError, IndexError):
+        ddata21 = 0
 
     ddata07 = data['data']['alertsServiceSearch']['alerts']['list'][i]['metadata']['created_at']['seconds']  # COL 8
     ddata08 = data['data']['alertsServiceSearch']['alerts']['list'][i]['metadata']['creator']['detector']['detector_id']  # COL 9
@@ -114,7 +123,7 @@ while i <= (total - 1):
     ddata14 =  ddata14.replace(';', ',')
 
     # Gravando o arquivo CSV
-    arquivo.write(f"\n{i};{ddata01};{ddata02};{ddata03};{ddata04};{ddata05};{ddata06};{ddata07};{ddata08};{ddata09};{ddata10};{ddata11};{ddata12};{ddata13};{ddata14};{ddata15};{ddata16};{ddata17};{ddata18};{ddata19};{ddata20}")    # Linha
+    arquivo.write(f"\n{i};{ddata01};{ddata02};{ddata03};{ddata04};{ddata05};{ddata06};{ddata07};{ddata08};{ddata09};{ddata10};{ddata11};{ddata12};{ddata13};{ddata14};{ddata15};{ddata16};{ddata17};{ddata18};{ddata19};{ddata20};{ddata21}")    # Linha
 
 # print(f"\nTotal: {total}")
 arquivo.close()

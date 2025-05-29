@@ -13,3 +13,6 @@ C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBAct
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.exe
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.xml
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\Newtonsoft.Json.dll
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\bin\Release\Newtonsoft.Json.xml
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_Investigations_Auto1\obj\Release\VBActive_Taegis_Investigations_Auto1.exe.config

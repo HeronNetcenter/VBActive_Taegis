@@ -4,6 +4,8 @@ AUTOR: HERON JR
 DATA:  24/01/23
 ALT:   26/01/23-03/04/23
        27/12/24: INCLUSÃO DO CAMPO FIRST_RESOLVED_AT
+       13/03/25: AMPLIAÇÃO DO PERÍODO DE COLETA - SUBSTITUI "yesterday" POR UM PERÍODO ANTERIOR DE 3 MESES first_day_3_months_ago
+       16/03/25: CONTINUAM OS TESTES COM CHATGPT-IA PARA PERÍODOS MENORES DO QUE 3 MESES
 US2: https://api.delta.taegis.secureworks.com
 client_name	tenant_id	  client_id	                        client_secret
 NETCENTER   137287	    SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg	ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx
@@ -21,19 +23,59 @@ import os
 # pClientName: Nome do cliente
 # pTenantId: Tenant ID do cliente
 # O processo será automatizado pelo programa VB.Net de chamada que calculará a data do dia seguinte a partir da data informada como parâmetro.
+
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('pTenantId')
 parser.add_argument('pClientId')
 parser.add_argument('pClientSecret')
+parser.add_argument('pFirstDayLastMonth')
 args = parser.parse_args()
 
-API_ENDPOINT='https://api.delta.taegis.secureworks.com'
+FIRST_DAY = args.pFirstDayLastMonth
 TENANT_ID = args.pTenantId
 CLIENT_ID = args.pClientId
 CLIENT_SECRET = args.pClientSecret
 
- # Fetch and test client credentials
+ # ==========================================================================================
+# PARA TESTES - COMENTAR ACIMA DESDE import argparse ATÉ CLIENTE_SECRET = args.pClientSecret
+# E TIRAR COMENTÁRIOS DO CLIENTE ESCOLHIDO NAS LINHAS ABAIXO:
+# ==========================================================================================
+# FIRST_DAY = '1'
+
+# TENANT = 'NETCENTER'
+# TENANT_ID = "137287"
+# CLIENT_ID = "SGDErpvNZHWbG5hhRVTQ1uJ3Tl8TExMg"
+# CLIENT_SECRET = "ZVvI3BUTRlpgkjs9D9e4wgex9T6_FcZrmVzUVYMJIwJnx9LjzRIqb5hJwtyVRZxx"
+
+# TENANT = 'NORTEC'
+# TENANT_ID = '138529'
+# CLIENT_ID = 'p0redWh1UyYnJxmaL6YYoCbmHBuf4vLA'
+# CLIENT_SECRET = 'yc5vFC_RFsFQzaYk_uc9thToqBagQaLEPZ-Hf4JJMZF4NuReNY6--eDlD9SvZDf-'
+
+# TENANT = 'TECHNOS'
+# TENANT_ID = '142779'
+# CLIENT_ID = '2rvSMDA40yFD5BlnN05qzrJQ6tw1xP1P'
+# CLIENT_SECRET = 'f9Hl-QbK3D6BOBcToyNGuq6lAVCzio85GszUnpp9lw98iRx-5_H5oOWQAaUkYA3G'
+
+# TENANT = 'LOPES_BSJ'
+# TENANT_ID = '146127'
+# CLIENT_ID = 'fAJGVCs32Cq0vSJW5D9LsyNAlwNZ6z5U'
+# CLIENT_SECRET = 'U2sGHnwwN6JH1-15E23vstUV6kUk5Co0MOXnd_gCBhHkk62PsXzK2ap6MDNg6uJV'
+
+# TENANT = 'INC'
+# TENANT_ID = '148351'
+# CLIENT_ID = 'QJsiirGqZAcTIvHbfZoeJRe3LgYk1zuw'
+# CLIENT_SECRET = 'hxaIGOtB4vqx06rhhSADCqanTSI25K7rFRXcWcrtcuJLglw_t5rTSt0XyIshM2P3'
+
+# TENANT = 'PINHEIRO GUIMARAES'
+# TENANT_ID = '148507'
+# CLIENT_ID = 'M0qQ4hBGyfvz81JYAL7789rZQDkkd05Q'
+# CLIENT_SECRET = '3FjyFdScwUWhWVRgvsSAgE3blHSJ8hcwQPrwq94czP_uqS-zka8SeHB8jnydMRgo'
+
+API_ENDPOINT='https://api.delta.taegis.secureworks.com'
+
+# Fetch and test client credentials
 client = BackendApplicationClient(client_id=CLIENT_ID)
 oauth_client = OAuth2Session(client=client)
 token = oauth_client.fetch_token(token_url=f'{API_ENDPOINT}/auth/api/v2/auth/token', client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
@@ -129,31 +171,86 @@ auth = "Bearer " + token['access_token']
 #     }
 # }
 
-# Parâmetros para o dia anterior (24 horas)
-from datetime import datetime, timedelta
-yesterday = datetime.now() - timedelta(days=1)
+# # Parâmetros para o dia anterior (24 horas)
+# Get current date
+from datetime import date, datetime, timedelta
+from dateutil.relativedelta import relativedelta
+today = date.today()
+# yesterday = datetime.now() - timedelta(days=1)
 
-print("EARLIEST= '" + yesterday.strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "' AND LATEST= '" + datetime.now().strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "'")
+# Get the first and the last days of the previous month for the process
+if FIRST_DAY == '1_a_15':
+  first_day_last_month = datetime(today.year, today.month - 1, 1) if today.month > 1 else datetime(today.year - 1, 12, 1)
+  last_day_last_month = datetime(today.year, today.month - 1, 15) if today.month > 1 else datetime(today.year - 1, 12, 15)
+elif FIRST_DAY == '16_a_fim':
+  first_day_last_month = datetime(today.year, today.month - 1, 15) if today.month > 1 else datetime(today.year - 1, 12, 15)
+  last_day_last_month = datetime(today.year, today.month, 1) - timedelta(days=1)
+elif FIRST_DAY == '1_a_10':
+  first_day_last_month = datetime(today.year, today.month - 1, 1) if today.month > 1 else datetime(today.year - 1, 12, 1)
+  last_day_last_month = datetime(today.year, today.month - 1, 10) if today.month > 1 else datetime(today.year - 1, 12, 10)
+elif FIRST_DAY == '11_a_20':
+  first_day_last_month = datetime(today.year, today.month - 1, 10) if today.month > 1 else datetime(today.year - 1, 12, 10)
+  last_day_last_month = datetime(today.year, today.month - 1, 20) if today.month > 1 else datetime(today.year - 1, 12, 20)
+elif FIRST_DAY == '21_a_fim':
+  first_day_last_month = datetime(today.year, today.month - 1, 20) if today.month > 1 else datetime(today.year - 1, 12, 20)
+  last_day_last_month = datetime(today.year, today.month, 1) - timedelta(days=1)
+elif FIRST_DAY == 'Mes':
+  first_day_last_month = datetime(today.year, today.month - 1, 1) if today.month > 1 else datetime(today.year - 1, 12, 21)
+  last_day_last_month = datetime(today.year, today.month, 1) - timedelta(days=1)
+
+# EM CASO DE TESTE DESCOMENTAR ABAIXO
+# print(TENANT)
+# print("EARLIEST= '" + first_day_last_month.strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "' AND LATEST= '" + last_day_last_month.strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "'")
+
 params = {
     "searchRequestInput": {
-        "cql_query": "EARLIEST= '" + yesterday.strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "' AND LATEST= '" + datetime.now().strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "'",
+        "cql_query": "EARLIEST= '" + first_day_last_month.strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "' AND LATEST= '" + last_day_last_month.strftime('%Y-%m-%d') + 'T00:00:00.000Z' + "'",
         "limit": 10000
     }
 }
 
-# print(yesterday.strftime('%Y-%m-%d') + 'T00:00:00.000Z')
-# print(datetime.now().strftime('%Y-%m-%d') + 'T00:00:00.000Z')
-
+# =====================================================================================================
+# MÓDULO ORIGINAL DE GRAVAÇÃO DO ARQUIVO JSON
+# =====================================================================================================
 r = oauth_client.post(f'{API_ENDPOINT}/graphql', json={
         "query": alertsQuery,
         "variables": params,
     }, headers={"X-Tenant-Context": TENANT_ID, "Authorization" : auth})
 
+# We can now decode the response and print it out
+result = json.loads(r.content)
+
+# print(json.dumps(result, indent=4))
+arquivo = open('alerts01_' + TENANT_ID + '_' + first_day_last_month.strftime('%Y%m%d') + '.json', 'w')
+arquivo.write(json.dumps(result, indent=4))
+arquivo.close()
+# =====================================================================================================
+
+# =====================================================================================================
+# MÓDULO PROPOSTO PELA IA GROK5 PARA GRAVAÇÃO DO ARQUIVO JSON
+# =====================================================================================================
+r = oauth_client.post(f'{API_ENDPOINT}/graphql', json={
+        "query": alertsQuery,
+        "variables": params,
+    }, headers={"X-Tenant-Context": TENANT_ID, "Authorization" : auth})
 
 # We can now decode the response and print it out
 result = json.loads(r.content)
 
-print(json.dumps(result, indent=4))
-arquivo = open('alerts01_' + TENANT_ID + '_' + yesterday.strftime('%Y%m%d') + '.json', 'w')
+# Extract the number of alerts (assuming the structure matches the expected JSON)
+if 'data' in result and 'alertsServiceSearch' in result['data']:
+    alerts_data = result['data']['alertsServiceSearch']
+    if 'alerts' in alerts_data and 'list' in alerts_data['alerts']:
+        all_alerts_count = len(alerts_data['alerts']['list'])
+        print(f"Total number of alerts collected: {all_alerts_count}")
+    else:
+        print("No alerts found in response")
+        all_alerts_count = 0
+else:
+    print(f"Error: {result.get('errors', 'Unknown error')}")
+    all_alerts_count = 0
+
+# Write the raw API response to the JSON file
+arquivo = open('alerts01_' + TENANT_ID + '_' + first_day_last_month.strftime('%Y%m%d') + '.json', 'w')
 arquivo.write(json.dumps(result, indent=4))
 arquivo.close()

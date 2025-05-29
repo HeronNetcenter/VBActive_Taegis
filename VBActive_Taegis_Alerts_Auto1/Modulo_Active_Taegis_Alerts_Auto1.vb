@@ -7,7 +7,10 @@ Imports VBActive_Taegis_DLL.ActiveTaegisDLL
 ''' Autor: Heron Domingues Jr
 ''' Data:  14/03/23
 ''' Alteração Data: 04/04/23-07/03/24-21/03/24
+''' 29/11/23: Criação da tabela t_taegis_alerts_tt para tratamento de Táticas e Técnicas
+''' 12/12/23: Criação da função OcorrenciasTacticsAnt para tratar o campo tactics_technique_id
 ''' 27/12/24: Inclusão do campo metadata_resolved_at
+''' 28/05/25: Inclusão do campo metadata_first_investigated_at
 ''' Obs: Nas propriedades do projeto desmarcar a opção "enable application framework" e mudar a caixa "Startup Object" para a Sub Main deste módulo
 ''' </summary>
 ''' <remarks></remarks>
@@ -36,9 +39,10 @@ Module Modulo_Active_Taegis_Alerts_Auto1
     Public Sub Main()
         'Chamada principal do Módulo de extração 1
         '14/03/23-30/08/23
+        '28/05/25
         '=========================================
         _strPastaPython = LeConfigPasta("pasta_python")
-        _strPastaProj = LeConfigPasta("pasta_proj_alerts_auto")
+        _strPastaProj = LeConfigPasta("pasta_proj_alerts_auto") '.Replace("Release", "Debug")   'Incluir a função Replace para Debug
 
         ExcluiArquivosAnteriores()
         CargaSQLClintes()
@@ -75,7 +79,7 @@ Module Modulo_Active_Taegis_Alerts_Auto1
         With oCmd
             .Connection = oCon
             .CommandType = CommandType.Text
-            .CommandText = "SELECT tenant_id, client_id, client_secret, client_name from t_taegis_tab_clients"
+            .CommandText = "Select tenant_id, client_id, client_secret, client_name from t_taegis_tab_clients"
             .CommandTimeout = 3600
             oDrd = .ExecuteReader
         End With
@@ -98,10 +102,11 @@ Module Modulo_Active_Taegis_Alerts_Auto1
 
     Private Sub Gera_Alert1_Json(ByVal strTenantId As String, ByVal strClientId As String, ByVal strClientSecret As String, ByVal strClientName As String)
         '14/03/23-04/04/23
+        '28/05/25: Inclusão do campo metadata_first_investigated_at - alteração para alerts01_auto.py
         'Gera o arquivo alerts01_yyyymmdd.json
-        '=====================================
+        '============================================================================================
         Dim oProcess As Process = New Process()
-        Dim oStartInfo As New ProcessStartInfo(_strPastaPython, "alerts01.py " &
+        Dim oStartInfo As New ProcessStartInfo(_strPastaPython, "alerts01_auto.py " &
                                                strTenantId & " " & strClientId & " " & strClientSecret)
         Dim strSaida As New String("alerts01_" & strTenantId & "_" & DateTime.Now.AddDays(-1).ToString("yyyyMMdd") & ".json")
         Dim strLinhas() As String
@@ -125,10 +130,11 @@ Module Modulo_Active_Taegis_Alerts_Auto1
 
     Private Sub Gera_Alert2_CSV(ByVal strTenantId As String, ByVal strClientId As String, ByVal strClientSecret As String, ByVal strClientName As String)
         '15/03/23-04/04/23
+        '28/05/25: Inclusão do campo metadata_first_investigated_at - alteração para alerts02_auto.py
         'Gera o arquivo alerts02_yyyymmdd.csv
-        '====================================
+        '============================================================================================
         Dim oProcess As Process = New Process()
-        Dim oStartInfo As New ProcessStartInfo(_strPastaPython, "alerts02.py " &
+        Dim oStartInfo As New ProcessStartInfo(_strPastaPython, "alerts02_auto.py " &
                                                strTenantId)
         Dim strSaida As New String("alerts02_" & strTenantId & "_" & DateTime.Now.AddDays(-1).ToString("yyyyMMdd") & ".csv")
         Dim strLinhas() As String
@@ -154,7 +160,8 @@ Module Modulo_Active_Taegis_Alerts_Auto1
         'Grava tabela SQL t_taegis_alerts a partir do arquivo alerts02_aaaammdd.csv
         '15/03/23-04/04/23-11/12/23
         '27/12/24
-        '==========================================================================
+        '28/05/25: INCLUSÃO DO CAMPO metadata_first_investigated_at NA TABELA SQL t_taegis_alerts
+        '=========================================================================================================================================
         '01 - attack_technique
         '02 - entities
         '03 - ent_relationships
@@ -175,6 +182,7 @@ Module Modulo_Active_Taegis_Alerts_Auto1
         '18 - suppressed_rules
         '19 - tactics_technique
         '20 - metadata_first_resolved_at
+        '21 - metadata_first_investigated_at
         Dim strData As New String(DateTime.Now.AddDays(-1).ToString("yyyyMMdd"))
         Dim strSaida As New String("\alerts02_" & strTenantId & "_" & strData & ".csv")
 
@@ -237,7 +245,8 @@ Module Modulo_Active_Taegis_Alerts_Auto1
         'Inclui linhas na tabela SQL t_taegis_alerts
         '15/03/23-04/04/23-11/12/23
         '27/12/24
-        '===========================================
+        '28/05/25 - Inclusão do campo metadata_first_investigated_at na tabela SQL t_taegis_alerts
+        '=========================================================================================
         Dim oCon As New SqlConnection(ConnectionString)
         Dim oCmd As New SqlCommand
         Dim quote As String = """"    'Uma aspa dupla como string
@@ -273,7 +282,8 @@ Module Modulo_Active_Taegis_Alerts_Auto1
                     "suppressed, " &
                     "suppressed_rules, " &
                     "tactics_technique_id, " &
-                    "metadata_first_resolved_at) " &
+                    "metadata_first_resolved_at, " &
+                    "metadata_first_investigated_at) " &
                     "values('" & strData & "', " &
                     fields(0) & ", '" &
                     strTenantID & "', '" &
@@ -297,7 +307,8 @@ Module Modulo_Active_Taegis_Alerts_Auto1
                     fields(17).Replace("'", "|") & "', '" &
                     fields(18).Replace("'", "|") & "', '" &
                     fields(19).Replace("'", "|") & "', '" &
-                    fields(20).Replace("'", quote) & "')"
+                    fields(20).Replace("'", "|") & "', '" &
+                    fields(21).Replace("'", quote) & "')"
                 .CommandTimeout = 3600
                 .ExecuteNonQuery()
             End With
@@ -318,7 +329,8 @@ Module Modulo_Active_Taegis_Alerts_Auto1
         'Altera linhas na tabela SQL t_taegis_alerts
         '15/03/23-04/04/23-14/10/23-11/12/23
         '27/12/24
-        '===========================================
+        '28/05/25 - Inclusão do campo metadata_first_investigated_at na tabela SQL t_taegis_alerts
+        '=========================================================================================
         Dim oCon As New SqlConnection(ConnectionString)
         Dim oCmd As New SqlCommand
         Dim quote As String = """"    'Uma aspa dupla como string
@@ -339,6 +351,7 @@ Module Modulo_Active_Taegis_Alerts_Auto1
                     "investigation_ids = '" & fields(5).Replace("'", "|") & "', " &
                     "metadata_confidence = '" & fields(6).Replace("'", "|") & "', " &
                     "metadata_first_resolved_at = '" & fields(20).Replace("'", "|") & "', " &
+                    "metadata_first_investigated_at = '" & fields(21).Replace("'", "|") & "', " &
                     "metadata_created_at = '" & fields(7).Replace("'", "|") & "', " &
                     "metadata_creator_detector_id = '" & fields(8).Replace("'", "|") & "', " &
                     "metadata_creator_detector_version = '" & fields(9).Replace("'", "|") & "', " &

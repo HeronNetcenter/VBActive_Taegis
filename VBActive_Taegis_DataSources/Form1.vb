@@ -500,20 +500,22 @@ Public Class Form1
     End Function
 
     Private Sub GravaSQLDataSources(ByVal intHealth As Integer, ByVal intWarning As Integer, ByVal intNodata As Integer)
-
+        'Grava a tabela SQL t_taegis_data_sources a partir dos dados contados
+        '06/06/25
+        '====================================================================
         If Not ExisteDataSourcesQL(_aTenantId(_intClientIndex)) Then
-            GravaSQL_Inclui_CSV(intHealth, intWarning, intNodata)
             _intLinhasSQL_Inc += 1
+            GravaSQL_Inclui_CSV(intHealth, intWarning, intNodata)
         Else
-            GravaSQL_Altera_CSV(intHealth, intWarning, intNodata)
             _intLinhasSQL_Alt += 1
+            GravaSQL_Altera_CSV(intHealth, intWarning, intNodata)
         End If
 
     End Sub
 
     Private Sub GravaSQL_Inclui_CSV(ByVal intHealth As Integer, ByVal intWarning As Integer, ByVal intNodata As Integer)
         'Inclui linhas na tabela SQL t_taegis_data_sources
-        '20/02/25
+        '20/02/25-06/06/25
         '=================================================
         Dim oCon As New SqlConnection(ConnectionString)
         Dim oCmd As New SqlCommand
@@ -543,6 +545,7 @@ Public Class Form1
             End With
 
             oCon.Close()
+            txtMensagens.Text &= vbCrLf & "Linhas incluídas na tabela SQL t_taegis_data_sources: " & _intLinhasSQL_Inc & vbCrLf
 
         Catch ex As SqlException
             txtMensagens.Text &= vbCrLf & "Erro SQL: " & ex.ToString
@@ -558,7 +561,7 @@ Public Class Form1
 
     Private Sub GravaSQL_Altera_CSV(ByVal intHealth As Integer, ByVal intWarning As Integer, ByVal intNodata As Integer)
         'Altera linhas na tabela SQL t_taegis_data_sources
-        '20/02/25
+        '20/02/25-06/06/25
         '===========================================
         Dim oCon As New SqlConnection(ConnectionString)
         Dim oCmd As New SqlCommand
@@ -583,6 +586,7 @@ Public Class Form1
             End With
 
             oCon.Close()
+            txtMensagens.Text &= vbCrLf & "Linhas alteradas na tabela SQL t_taegis_data_sources: " & _intLinhasSQL_Alt & vbCrLf
 
         Catch ex As SqlException
             txtMensagens.Text &= vbCrLf & "Erro SQL: " & ex.ToString

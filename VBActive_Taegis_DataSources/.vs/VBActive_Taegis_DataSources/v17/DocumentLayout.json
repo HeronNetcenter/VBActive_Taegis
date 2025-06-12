@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_DataSources\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4672125F-3892-40EA-AC44-2B1C20CC329F}|VBActive_Taegis_DataSources.vbproj|c:\\dwnetcenter\\_desenv\\vb\\vbactive_taegis_datasources\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{4672125F-3892-40EA-AC44-2B1C20CC329F}|VBActive_Taegis_DataSources.vbproj|solutionrelative:form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4672125F-3892-40EA-AC44-2B1C20CC329F}|VBActive_Taegis_DataSources.vbproj|C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_DataSources\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{4672125F-3892-40EA-AC44-2B1C20CC329F}|VBActive_Taegis_DataSources.vbproj|solutionrelative:form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADM_HERON.DOMINGUES\\AppData\\Local\\Temp\\4\\.vsdbgsrc\\91a905482f75ca77fc350d9c857390db43571b5d612c883626a3409d95aba88f\\TextFieldParser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -21,53 +13,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TextFieldParser.cs",
               "DocumentMoniker": "C:\\Users\\ADM_HERON.DOMINGUES\\AppData\\Local\\Temp\\4\\.vsdbgsrc\\91a905482f75ca77fc350d9c857390db43571b5d612c883626a3409d95aba88f\\TextFieldParser.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\ADM_HERON.DOMINGUES\\AppData\\Local\\Temp\\4\\.vsdbgsrc\\91a905482f75ca77fc350d9c857390db43571b5d612c883626a3409d95aba88f\\TextFieldParser.cs",
               "ToolTip": "C:\\Users\\ADM_HERON.DOMINGUES\\AppData\\Local\\Temp\\4\\.vsdbgsrc\\91a905482f75ca77fc350d9c857390db43571b5d612c883626a3409d95aba88f\\TextFieldParser.cs [Read Only]",
               "RelativeToolTip": "..\\..\\..\\..\\Users\\ADM_HERON.DOMINGUES\\AppData\\Local\\Temp\\4\\.vsdbgsrc\\91a905482f75ca77fc350d9c857390db43571b5d612c883626a3409d95aba88f\\TextFieldParser.cs [Read Only]",
-              "ViewState": "AQIAAKcCAAAAAAAAAAAvwMACAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T19:53:39.795Z",
               "EditorCaption": " [Read Only]"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.vb",
-              "DocumentMoniker": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_DataSources\\Form1.vb",
-              "RelativeDocumentMoniker": "Form1.vb",
-              "ToolTip": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_DataSources\\Form1.vb",
-              "RelativeToolTip": "Form1.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-07T19:25:54.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.vb [Design]",
-              "DocumentMoniker": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_DataSources\\Form1.vb",
-              "RelativeDocumentMoniker": "Form1.vb",
-              "ToolTip": "C:\\DWNetcenter\\_Desenv\\VB\\VBActive_Taegis_DataSources\\Form1.vb [Design]",
-              "RelativeToolTip": "Form1.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-07T19:24:11.261Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

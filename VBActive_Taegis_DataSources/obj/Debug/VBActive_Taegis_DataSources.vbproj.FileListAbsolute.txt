@@ -14,3 +14,4 @@ C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Debug\VBActive.3D0AC62
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Debug\VBActive_Taegis_DataSources.exe
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Debug\VBActive_Taegis_DataSources.xml
 C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Debug\VBActive_Taegis_DataSources.pdb
+C:\DWNetcenter\_Desenv\VB\VBActive_Taegis_DataSources\obj\Debug\VBActive_Taegis_DataSources.exe.config

@@ -43,7 +43,6 @@ Partial Class Form1
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.txtPastaPython = New System.Windows.Forms.TextBox()
         Me.btnContaDataSources = New System.Windows.Forms.Button()
-        Me.btnCSV_SQL = New System.Windows.Forms.Button()
         Me.btnGeraCSVDataSources = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
@@ -225,25 +224,14 @@ Partial Class Form1
         Me.btnContaDataSources.Text = "Conta Data Sources"
         Me.btnContaDataSources.UseVisualStyleBackColor = True
         '
-        'btnCSV_SQL
-        '
-        Me.btnCSV_SQL.Enabled = False
-        Me.btnCSV_SQL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCSV_SQL.Location = New System.Drawing.Point(682, 304)
-        Me.btnCSV_SQL.Name = "btnCSV_SQL"
-        Me.btnCSV_SQL.Size = New System.Drawing.Size(115, 23)
-        Me.btnCSV_SQL.TabIndex = 32
-        Me.btnCSV_SQL.Text = "CSV -> SQL"
-        Me.btnCSV_SQL.UseVisualStyleBackColor = True
-        '
         'btnGeraCSVDataSources
         '
         Me.btnGeraCSVDataSources.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGeraCSVDataSources.Location = New System.Drawing.Point(682, 260)
         Me.btnGeraCSVDataSources.Name = "btnGeraCSVDataSources"
-        Me.btnGeraCSVDataSources.Size = New System.Drawing.Size(115, 39)
+        Me.btnGeraCSVDataSources.Size = New System.Drawing.Size(115, 69)
         Me.btnGeraCSVDataSources.TabIndex = 31
-        Me.btnGeraCSVDataSources.Text = "Gera CSV de Data Sources"
+        Me.btnGeraCSVDataSources.Text = "Gera CSV de Data Sources ==> SQL"
         Me.btnGeraCSVDataSources.UseVisualStyleBackColor = True
         '
         'Label3
@@ -262,7 +250,6 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(804, 522)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.btnCSV_SQL)
         Me.Controls.Add(Me.btnGeraCSVDataSources)
         Me.Controls.Add(Me.btnAtualizaPastas)
         Me.Controls.Add(Me.cboClientes)
@@ -314,7 +301,6 @@ Partial Class Form1
     Friend WithEvents btnContaDataSources As Button
     Friend WithEvents FechaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
-    Friend WithEvents btnCSV_SQL As Button
     Friend WithEvents btnGeraCSVDataSources As Button
     Friend WithEvents Label3 As Label
 End Class
